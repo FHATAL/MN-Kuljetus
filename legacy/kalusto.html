@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <title>Kalusto — MN Kuljetus Oy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Moderni FNA- ja FRC-luokiteltu kalusto reaaliaikaisella satelliittiseurannalla." />
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --nav:linear-gradient(90deg,#fff 80%,#f3f6fa 100%);
+      --nav-solid:#fff;
+      --nav-2:#f3f6fa;
+      --accent:#0b3d91;
+      --bg:#f3f6fa;
+      --panel:#ffffff;
+      --card:#f9fbff;
+      --text:#0b3d91;
+      --muted:#4a5568;
+      --radius:14px;
+      --max:1200px;
+      --grad:linear-gradient(135deg,#0077ff,#00c2ff);
+      --shadow:0 8px 20px rgba(0,0,0,.08);
+      --gallery-max-width: 1920px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html, body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body{
+      font:16px/1.6 'Inter', Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);background:var(--bg);
+      animation:fadeInBody 1.1s cubic-bezier(.4,0,.2,1);
+      flex: 1 0 auto;
+    }
+    @keyframes fadeInBody {
+      from { opacity:0;}
+      to { opacity:1;}
+    }
+    a{text-decoration:none;color:inherit}
+    .topbar{
+      background:var(--nav);
+      color:var(--accent);
+      position:sticky; top:0; z-index:1000;
+      box-shadow:0 4px 18px 0 rgba(11,61,145,.07), 0 1.5px 0 0 #e5eaf3;
+      border-bottom:1.5px solid #e5eaf3;
+      background-color:var(--nav-solid);
+    }
+    .nav-wrap{
+      max-width:var(--max);margin:auto;padding:0 18px;display:flex;align-items:center;height:74px;gap:18px;
+      backdrop-filter:saturate(180%) blur(4px);
+      -webkit-backdrop-filter:saturate(180%) blur(4px);
+    }
+    .brand img{height:46px;transition:transform .25s cubic-bezier(.4,0,.2,1);}
+    .brand img:hover{transform:scale(1.07);filter:drop-shadow(0 2px 6px rgba(11,61,145,0.08));}
+    .partner{margin-left:auto}.partner img{height:38px;opacity:.9;transition:filter .2s;}
+    .partner img:hover{filter:brightness(1.15);}
+    .menu{display:flex;align-items:center;gap:4px;margin-left:20px}.menu>li{list-style:none;position:relative}
+    .menu>li>a,.menu>li>button{
+      appearance:none;border:0;background:transparent;color:var(--accent);padding:12px 16px;border-radius:8px;cursor:pointer;font-weight:600;
+      transition:background .2s, color .2s, box-shadow .2s; font-family:inherit;
+    }
+    .menu>li>a:hover,.menu>li>button:hover{
+      background:rgba(11,61,145,.07);
+      color:#0077ff;
+      box-shadow:0 2px 8px rgba(0,119,255,.07);
+    }
+    .menu>li.active>a{
+      background:rgba(11,61,145,.13);
+      color:#0077ff;
+      box-shadow:0 2px 8px rgba(0,119,255,.09);
+    }
+    .dropdown{
+      position:absolute;left:0;top:100%;min-width:220px;background:var(--nav-2);border-radius:10px;overflow:hidden;display:none;animation:fadeInMenu .25s;
+      background:var(--nav-2);
+      box-shadow:0 8px 24px rgba(11,61,145,.08);
+    }
+    @keyframes fadeInMenu {
+      from { opacity:0; transform:translateY(10px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    .menu>li:hover .dropdown{display:block}.dropdown a{display:block;color:var(--accent);padding:10px 14px;transition:background .2s}
+    .dropdown a:hover{
+      background:rgba(11,61,145,.07);
+      color:#0077ff;
+    }
+    .hamb{display:none;margin-left:8px}.hamb button{
+      background:rgba(11,61,145,.07);
+      color:var(--accent);
+      border:1px solid #e0e0e0;
+      width:42px; height:42px; border-radius:10px;
+      cursor:pointer;
+      transition:background .2s, box-shadow .2s;
+      box-shadow:0 2px 8px rgba(0,119,255,.07);
+    }
+    .hamb button:hover{
+      background:rgba(11,61,145,.13);
+      box-shadow:0 4px 12px rgba(0,119,255,.13);
+    }
+    @media(max-width:980px){.partner{display:none}.menu{display:none;position:fixed;left:0;right:0;top:74px;background:var(--nav-2);flex-direction:column;padding:10px;
+        background:var(--nav-2);
+        box-shadow:0 10px 24px rgba(11,61,145,.10);
+      }
+      .menu.open{display:flex;animation:fadeInMenu .3s;}.menu>li{width:100%}.menu>li>a,.menu>li>button{width:100%;text-align:left}
+      .dropdown{position:static;display:none;background:transparent}.menu>li.open .dropdown{display:block}.hamb{display:block;margin-left:auto}}
+    header.hero{
+      position:relative;
+      background:linear-gradient(rgba(0,60,150,.45),rgba(0,60,150,.45)),url('img/main-page.jpg') center/cover no-repeat;
+      color:#fff;text-align:center;padding:120px 18px;
+      animation: heroFadeIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes heroFadeIn {
+      from { opacity:0; transform:translateY(30px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    header.hero h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px;animation:fadeInUp 1s .2s both;}
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(24px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    main{
+      max-width:var(--max);margin:60px auto;padding:0 18px;opacity:0;animation:fadeInSection 1s .3s forwards;
+      flex: 1 0 auto;
+    }
+    @keyframes fadeInSection {
+      from { opacity:0; transform:translateY(30px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    .gallery{
+      display:grid;
+      gap:48px;
+      grid-template-columns:1fr;
+      margin-top:40px;
+      margin-bottom:40px;
+      justify-content:center;
+      max-width:var(--gallery-max-width);
+      margin-left:auto;
+      margin-right:auto;
+    }
+    @media(min-width:900px){
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(min-width:1400px){
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    .gallery img{
+      width:100%;
+      aspect-ratio: 21/9;
+      height:auto;
+      min-height:380px;
+      max-height:700px;
+      object-fit:cover;
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      /* Remove or adjust opacity and animation for instant visibility */
+      opacity:1;
+      transform:none;
+      /* Remove animation and animation-delay */
+      /* animation:imgFadeIn .8s cubic-bezier(.4,0,.2,1) forwards;
+      animation-delay:.7s; */
+      transition:transform .2s,box-shadow .2s;
+      background:#eaf3fb;
+      display:block;
+    }
+    .gallery img:hover{
+      transform:scale(1.04) rotate(-1deg);
+      box-shadow:0 16px 48px rgba(0,150,255,.18);
+    }
+    footer {
+      background:linear-gradient(90deg,#0b3d91 70%,#0077ff 100%);
+      color:#fff;
+      text-align:center;
+      padding:48px 18px 36px 18px;
+      margin-top:80px;
+      font-size:1.13rem;
+      letter-spacing:.1px;
+      box-shadow:0 -2px 24px rgba(0,60,150,.08);
+      flex-shrink: 0;
+    }
+    @media (max-width:600px){
+      footer{font-size:1em;padding:32px 8px 24px 8px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand"><img src="img/logo.png" alt="MN Kuljetus Oy"></a>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">ETUSIVU</a></li>
+        <li tabindex="0">
+          <button>PALVELUT</button>
+          <div class="dropdown">
+            <a href="kuljetuspalvelut.html">Kuljetuspalvelut</a>
+            <a href="varastointipalvelut.html">Varastointipalvelut</a>
+            <a href="liiketila.html">Liiketila</a>
+            <a href="koulutus.html">Koulutus- ja kokoustilat</a>
+          </div>
+        </li>
+        <li class="active" tabindex="0">
+          <button>YRITYS</button>
+          <div class="dropdown">
+            <a href="kalusto.html">Kalusto</a>
+            <a href="historia.html">Historia</a>
+          </div>
+        </li>
+        <li><a href="yhteystiedot.html">YHTEYSTIEDOT</a></li>
+        <li><a href="ota-yhteytta.html">OTA YHTEYTTÄ</a></li>
+      </ul>
+      <div class="hamb"><button onclick="toggleMenu()">☰</button></div>
+      <div class="partner"><img src="assets/partner-badge.png" alt=""></div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <h1>Kalusto</h1>
+  </header>
+
+  <main>
+    <div style="text-align:center;margin-bottom:18px;">
+      <h2 style="font-size:2.3rem;color:var(--accent);margin-bottom:10px;">Kalustogalleria</h2>
+      <p style="color:var(--muted);font-size:1.18em;">Tutustu MN Kuljetus Oy:n monipuoliseen ja moderniin kalustoon.</p>
+      <p style="color:var(--muted);max-width:700px;margin:18px auto 0 auto;font-size:1.07em;">
+        Yrityksemme kalusto edustaa uusinta teknologiaa ja huippulaatua: FNA- ja FRC-luokitellut ajoneuvot takaavat lämpötilasäädellyt kuljetukset turvallisesti ja tehokkaasti. Kaikki ajoneuvot on varustettu reaaliaikaisella satelliittiseurannalla, mikä lisää toimitusvarmuutta ja läpinäkyvyyttä. Panostamme ympäristöystävällisyyteen sekä säännölliseen huoltoon, jotta palvelumme on aina luotettavaa ja vastuullista.
+      </p>
+    </div>
+    <div class="gallery">
+      <img src="kalusto/1.jpg" alt="Puoliperävaunu">
+      <img src="kalusto/2.jpg" alt="Jakeluauto">
+      <img src="kalusto/3.jpg" alt="Pakettiauto">
+      <img src="kalusto/4.jpg" alt="Terminaalialue">
+      <img src="kalusto/5.jpg" alt="Terminaalialue">
+      <img src="kalusto/6.jpg" alt="Terminaalialue">
+      <img src="kalusto/7.jpg" alt="Terminaalialue">
+      <img src="kalusto/8.jpg" alt="Terminaalialue">
+      <!-- Add more images as needed -->
+    </div>
+  </main>
+
+  <footer>
+    <div style="max-width:900px;margin:0 auto;">
+      <strong style="color:#0b3d91;font-size:1.15em;">MN Kuljetus Oy</strong><br>
+      <span style="color:#fff;">Perheyritys vuodesta 2004</span><br>
+      <span style="color:#e3eefb;">Palvelemme Länsi- ja Etelä-Suomessa</span><br>
+      <span style="color:#b6d6f7;">Y-tunnus: 1234567-8 | info@mnkuljetus.fi | 040 123 4567</span><br>
+      <span style="color:#cfe7ff;">© 2025 MN Kuljetus Oy – Kaikki oikeudet pidätetään</span>
+    </div>
+    <style>
+      footer {
+        background:linear-gradient(90deg,#0b3d91 70%,#0077ff 100%);
+        color:#fff;
+        text-align:center;
+        padding:48px 18px 36px 18px;
+        margin-top:80px;
+        font-size:1.13rem;
+        letter-spacing:.1px;
+        box-shadow:0 -2px 24px rgba(0,60,150,.08);
+        flex-shrink: 0;
+      }
+      @media (max-width:600px){
+        footer{font-size:1em;padding:32px 8px 24px 8px;}
+      }
+    </style>
+  </footer>
+
+  <script>
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('open'); }
+    document.querySelectorAll('.menu > li > button').forEach(b=>b.addEventListener('click',e=>{ if(matchMedia('(max-width:980px)').matches){ e.currentTarget.parentElement.classList.toggle('open'); }}));
+  </script>
+</body>
+</html>
+</html>

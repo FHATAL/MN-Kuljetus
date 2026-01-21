@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <title>Ota yhteyttä — MN Kuljetus Oy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ota yhteyttä MN Kuljetus Oy:öön. Kysy kuljetuksesta, varastoinnista, liiketiloista tai kokoustiloista. Vastaamme nopeasti." />
+  <style>
+    :root{
+      --nav:linear-gradient(90deg,#fff 80%,#f3f6fa 100%);
+      --nav-solid:#fff;
+      --nav-2:#f3f6fa;
+      --accent:#0b3d91;
+      --bg:#f3f6fa;
+      --panel:#ffffff;
+      --card:#f9fbff;
+      --text:#0b3d91;
+      --muted:#4a5568;
+      --radius:14px;
+      --max:1200px;
+      --grad:linear-gradient(135deg,#0077ff,#00c2ff);
+      --shadow:0 8px 20px rgba(0,0,0,.08);
+      --ring:rgba(0,194,255,.25);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html, body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body{
+      font:16px/1.6 "Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      scroll-behavior:smooth;
+      flex: 1 0 auto;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* NAV */
+    .topbar{
+      background:var(--nav);
+      color:var(--accent);
+      position:sticky; top:0; z-index:1000;
+      box-shadow:0 4px 18px 0 rgba(11,61,145,.07), 0 1.5px 0 0 #e5eaf3;
+      /* subtle border bottom for separation */
+      border-bottom:1.5px solid #e5eaf3;
+      /* fallback for browsers not supporting gradients */
+      background-color:var(--nav-solid);
+    }
+    .nav-wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:0 18px;
+      display:flex; align-items:center; gap:18px;
+      height:74px;
+      /* Add a slight blur for glassy effect */
+      backdrop-filter:saturate(180%) blur(4px);
+      -webkit-backdrop-filter:saturate(180%) blur(4px);
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{height:46px}
+    .menu{display:flex; align-items:center; gap:4px; margin-left:20px}
+    .menu>li{list-style:none; position:relative}
+    .menu>li>a,.menu>li>button{
+      appearance:none; border:0; background:transparent; color:var(--accent);
+      padding:12px 16px; border-radius:8px; cursor:pointer; font-weight:600; letter-spacing:.2px;
+      transition:background .2s, color .2s;
+    }
+    .menu>li>a:hover,.menu>li>button:hover{
+      background:rgba(11,61,145,.07);
+      color:#0077ff;
+      box-shadow:0 2px 8px rgba(0,119,255,.07);
+    }
+    .menu>li.active>a{
+      background:rgba(11,61,145,.13);
+      color:#0077ff;
+      box-shadow:0 2px 8px rgba(0,119,255,.09);
+    }
+    .dropdown{
+      position:absolute; left:0; top:100%;
+      min-width:220px; background:var(--nav-2);
+      border-radius:10px; overflow:hidden; display:none;
+      box-shadow:0 8px 24px rgba(11,61,145,.08);
+      z-index:10;
+    }
+    .menu>li:hover .dropdown,
+    .menu>li:focus-within .dropdown{
+      display:block;
+    }
+    .dropdown a{
+      display:block; color:var(--accent); padding:10px 14px; transition:background .2s, color .2s;
+      white-space:nowrap;
+    }
+    .dropdown a:hover{
+      background:rgba(11,61,145,.07);
+      color:#0077ff;
+    }
+    .partner{margin-left:auto}
+    .partner img{height:38px; opacity:.9}
+
+    /* Mobile */
+    .hamb{display:none; margin-left:8px}
+    .hamb button{
+      background:rgba(11,61,145,.07);
+      color:var(--accent);
+      border:1px solid #e0e0e0;
+      width:42px; height:42px; border-radius:10px;
+      cursor:pointer;
+      transition:background .2s, box-shadow .2s;
+      box-shadow:0 2px 8px rgba(0,119,255,.07);
+    }
+    .hamb button:hover{
+      background:rgba(11,61,145,.13);
+      box-shadow:0 4px 12px rgba(0,119,255,.13);
+    }
+    @media (max-width:980px){
+      .partner{display:none}
+      .menu{
+        display:none; position:fixed; left:0; right:0; top:74px;
+        background:var(--nav-2); flex-direction:column; padding:10px;
+        box-shadow:0 10px 24px rgba(11,61,145,.10);
+      }
+      .menu.open{display:flex}
+      .menu>li{width:100%}
+      .menu>li>a,.menu>li>button{width:100%; text-align:left}
+      .dropdown{
+        position:static;
+        min-width:0;
+        box-shadow:none;
+        border-radius:0;
+        display:none;
+        background:transparent;
+      }
+      .menu>li.open .dropdown{display:block}
+      .dropdown a{white-space:normal;}
+      .hamb{display:block}
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      background:linear-gradient(rgba(0,60,150,.45),rgba(0,60,150,.45)),url('img/main-page.jpg') center/cover no-repeat;
+      color:#fff;text-align:center;padding:120px 18px;
+      animation: heroFadeIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .hero h1{font-size:clamp(2rem,4vw,3rem); margin-bottom:12px; text-shadow:0 3px 8px rgba(0,0,0,.35)}
+    .hero p{max-width:760px; margin:0 auto; color:#e4f1ff}
+
+    /* CONTENT */
+    main{max-width:var(--max); margin:60px auto; padding:0 18px; flex: 1 0 auto}
+    .grid{display:grid; gap:22px}
+    @media(min-width:860px){ .grid{grid-template-columns:1.1fr .9fr} }
+    .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+    h2{font-size:1.8rem; color:var(--nav); margin-bottom:14px}
+    p{margin-bottom:10px}
+    .muted{color:var(--muted)}
+
+    /* FORM */
+    form{display:grid; gap:12px}
+    .row{display:grid; gap:12px}
+    @media(min-width:640px){ .row.two{grid-template-columns:1fr 1fr} }
+    input, textarea{
+      width:100%; padding:12px 14px; border-radius:12px;
+      border:1px solid #dbe5f3; background:#fff; color:var(--text); outline:none;
+      transition:box-shadow .15s, border-color .15s;
+    }
+    input:focus, textarea:focus{
+      border-color:#b5dfff;
+      box-shadow:0 0 0 4px var(--ring);
+    }
+    textarea{min-height:140px; resize:vertical}
+    .btn{
+      display:inline-flex; justify-content:center; align-items:center; gap:8px;
+      padding:12px 16px; border-radius:12px; border:0; cursor:pointer; font-weight:700;
+      background:var(--grad); color:#fff; box-shadow:0 6px 16px rgba(0,150,255,.25);
+      transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,150,255,.35)}
+    .btn:disabled{opacity:.6; cursor:not-allowed; filter:grayscale(0.1)}
+    .help{font-size:.95rem; color:var(--muted)}
+
+    /* INFO CARD */
+    .info-list{list-style:none}
+    .info-list li{margin-bottom:10px}
+    .info-list a{color:#0366d6}
+
+    /* MAP */
+    .map{
+      height:260px; border-radius:12px; overflow:hidden; border:1px solid #dbe5f3; margin-top:10px;
+      background:#eef6ff;
+    }
+
+    footer {
+      background:linear-gradient(90deg,#0b3d91 70%,#0077ff 100%);
+      color:#fff;
+      text-align:center;
+      padding:48px 18px 36px 18px;
+      margin-top:80px;
+      font-size:1.13rem;
+      letter-spacing:.1px;
+      box-shadow:0 -2px 24px rgba(0,60,150,.08);
+      flex-shrink: 0;
+    }
+    @media (max-width:600px){
+      footer{font-size:1em;padding:32px 8px 24px 8px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="topbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand" aria-label="MN Kuljetus Oy etusivu">
+        <img src="img/logo.png" alt="MN Kuljetus Oy">
+      </a>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html">ETUSIVU</a></li>
+        <li>
+          <button type="button">PALVELUT</button>
+          <div class="dropdown" role="menu">
+            <a href="kuljetuspalvelut.html">Kuljetuspalvelut</a>
+            <a href="varastointipalvelut.html">Varastointipalvelut</a>
+            <a href="liiketila.html">Liiketila</a>
+            <a href="koulutus.html">Koulutus- ja kokoustilat</a>
+          </div>
+        </li>
+        <li>
+          <button type="button">YRITYS</button>
+          <div class="dropdown" role="menu">
+            <a href="kalusto.html">Kalusto</a>
+            <a href="historia.html">Historia</a>
+          </div>
+        </li>
+        <li><a href="yhteystiedot.html">YHTEYSTIEDOT</a></li>
+        <li class="active"><a href="ota-yhteytta.html">OTA YHTEYTTÄ</a></li>
+      </ul>
+
+      <div class="hamb"><button aria-label="Avaa valikko" onclick="toggleMenu()">☰</button></div>
+      <div class="partner"><img src="assets/partner-badge.png" alt=""></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Ota yhteyttä</h1>
+    <p>Kerro lähtöpaikka, määränpää ja aikataulu. Vastataan nopeasti ja sovitaan kuljetus.</p>
+  </header>
+
+  <!-- SUOMI100 GROUP IMAGE -->
+  <div style="display:flex; justify-content:center; align-items:center; margin:32px 0 0 0;">
+    <img src="img/Suomi100.jpg" alt="Suomi 100 -ryhmäkuva" style="max-width:600px; width:100%; height:auto; border-radius:16px; box-shadow:0 6px 32px rgba(0,60,150,.13);">
+  </div>
+
+  <!-- CONTENT -->
+  <main>
+    <div class="grid">
+      <!-- FORM CARD -->
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Yhteydenottolomake</h2>
+        <form id="contactForm" novalidate>
+          <div class="row two">
+            <input name="name" placeholder="Yritys tai nimi *" aria-label="Yritys tai nimi" required />
+            <input type="email" name="email" placeholder="Sähköposti *" aria-label="Sähköposti" required />
+          </div>
+          <div class="row two">
+            <input name="phone" placeholder="Puhelin" aria-label="Puhelin" />
+            <input name="subject" placeholder="Aihe" aria-label="Aihe" />
+          </div>
+          <textarea name="message" placeholder="Viesti: mitat, paino, nouto, toimitus, toivottu aika" aria-label="Viesti" required></textarea>
+
+          <!-- Formspree hidden fields -->
+          <input type="hidden" name="_subject" value="Uusi yhteydenotto — MN Kuljetus" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <button class="btn" type="submit" id="sendBtn">Lähetä viesti</button>
+          <p id="formMsg" class="help" aria-live="polite"></p>
+        </form>
+        <p class="help">Lähettämällä lomakkeen hyväksyt tietosuojakäytäntömme.</p>
+      </section>
+
+      <!-- INFO CARD -->
+      <aside class="card" aria-labelledby="contact-title">
+        <h2 id="contact-title">Yhteystiedot</h2>
+        <ul class="info-list">
+          <li><strong>MN Kuljetus Oy</strong></li>
+          <li>Juustokivenkatu 1, 29200 Harjavalta</li>
+          <li><strong>Puhelin:</strong> <a href="tel:020150120">020 150 120</a></li>
+          <li><strong>Y-tunnus:</strong> 1852019-4</li>
+        </ul>
+        <p class="muted"><strong>Laskutus</strong><br>Finvoice välittäjä OKOYFIHH<br>Finvoice osoite FI45 50370520043122</p>
+
+        <div class="map" aria-label="Kartta">
+          <!-- Voi vaihtaa upotteen koordinaatit tarkkoihin -->
+          <iframe title="Kartta" src="https://www.openstreetmap.org/export/embed.html?bbox=22.09,61.30,22.42,61.40&layer=mapnik" style="border:0; width:100%; height:100%"></iframe>
+        </div>
+
+        <div style="margin-top:14px">
+          <p><strong>Mikko Niinivirta</strong> — Toimitusjohtaja / Myynti<br>
+            <a href="mailto:mikko.niinivirta@mnkuljetus.fi">mikko.niinivirta@mnkuljetus.fi</a><br>
+            <a href="tel:+358405582667">040 558 2667</a></p>
+
+          <p><strong>Mika Vainio-Ketola</strong> — Ajojärjestely<br>
+            <a href="mailto:ajojarjestely@mnkuljetus.fi">ajojarjestely@mnkuljetus.fi</a><br>
+            <a href="tel:+358400825027">0400 825 027</a></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div style="max-width:900px;margin:0 auto;">
+      <strong style="color:#0b3d91;font-size:1.15em;">MN Kuljetus Oy</strong><br>
+      <span style="color:#fff;">Perheyritys vuodesta 2004</span><br>
+      <span style="color:#e3eefb;">Palvelemme Länsi- ja Etelä-Suomessa</span><br>
+      <span style="color:#b6d6f7;">Y-tunnus: 1234567-8 | info@mnkuljetus.fi | 040 123 4567</span><br>
+      <span style="color:#cfe7ff;">© 2025 MN Kuljetus Oy – Kaikki oikeudet pidätetään</span>
+    </div>
+    <style>
+      footer {
+        background:linear-gradient(90deg,#0b3d91 70%,#0077ff 100%);
+        color:#fff;
+        text-align:center;
+        padding:48px 18px 36px 18px;
+        margin-top:80px;
+        font-size:1.13rem;
+        letter-spacing:.1px;
+        box-shadow:0 -2px 24px rgba(0,60,150,.08);
+      }
+      @media (max-width:600px){
+        footer{font-size:1em;padding:32px 8px 24px 8px;}
+      }
+    </style>
+  </footer>
+
+  <script>
+    // Mobile menu
+    function toggleMenu(){
+      const m = document.getElementById('menu');
+      m.classList.toggle('open');
+    }
+    document.querySelectorAll('.menu > li > button').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        if(window.matchMedia('(max-width:980px)').matches){
+          e.currentTarget.parentElement.classList.toggle('open');
+        }
+      });
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Formspree AJAX
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ID"; // vaihda omaan osoitteeseen
+    const form  = document.getElementById('contactForm');
+    const msgEl = document.getElementById('formMsg');
+    const btn   = document.getElementById('sendBtn');
+
+    function validate(form){
+      const name = form.elements['name'];
+      const email = form.elements['email'];
+      const message = form.elements['message'];
+      if(!name.value.trim() || !email.value.trim() || !message.value.trim()) return false;
+      return true;
+    }
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      if(!validate(form)){
+        msgEl.textContent = "Täytä pakolliset kentät.";
+        return;
+      }
+      msgEl.textContent = "Lähetetään...";
+      btn.disabled = true;
+
+      try{
+        const data = new FormData(form);
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: data
+        });
+        if(res.ok){
+          msgEl.textContent = "Kiitos viestistä. Otamme pian yhteyttä.";
+          form.reset();
+        }else{
+          const err = await res.json().catch(()=>({}));
+          msgEl.textContent = err?.errors?.[0]?.message || "Lähetys epäonnistui. Yritä uudelleen.";
+        }
+      }catch(err){
+        msgEl.textContent = "Verkkovirhe. Tarkista yhteys ja yritä uudelleen.";
+      }finally{
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

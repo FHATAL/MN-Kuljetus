@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <title>MN Kuljetus Oy — Luotettavaa kuljetuspalvelua</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MN Kuljetus Oy — perheyritys vuodesta 2004. Kuljetus- ja logistiikkaratkaisuja Länsi- ja Etelä-Suomeen." />
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --nav:linear-gradient(90deg,#fff 80%,#f3f6fa 100%);
+      --nav-solid:#fff;
+      --nav-2:#f3f6fa;
+      --accent:#0b3d91;
+      --bg:#f3f6fa;
+      --panel:#ffffff;
+      --card:#f9fbff;
+      --text:#0b3d91;
+      --muted:#4a5568;
+      --radius:14px;
+      --max:1200px;
+      --grad:linear-gradient(135deg,#0077ff,#00c2ff);
+      --shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html, body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body{
+      font:16px/1.6 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      scroll-behavior:smooth;
+      /* Fade in body */
+      animation: fadeInBody 1.2s cubic-bezier(.4,0,.2,1);
+      flex: 1 0 auto;
+    }
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    a{color:inherit;text-decoration:none}
+
+    .topbar{
+      background:var(--nav);
+      color:var(--accent);
+      position:sticky; top:0; z-index:1000;
+      box-shadow:0 4px 18px 0 rgba(11,61,145,.07), 0 1.5px 0 0 #e5eaf3;
+      border-bottom:1.5px solid #e5eaf3;
+      background-color:var(--nav-solid);
+    }
+    .nav-wrap{
+      max-width:var(--max); margin:auto; padding:0 18px; display:flex; align-items:center; height:74px; gap:18px;
+      backdrop-filter:saturate(180%) blur(4px);
+      -webkit-backdrop-filter:saturate(180%) blur(4px);
+    }
+    .brand img{
+      height:46px;transition:transform .25s cubic-bezier(.4,0,.2,1);
+      filter:drop-shadow(0 2px 6px rgba(11,61,145,0.08));
+    }
+    .brand img:hover{transform:scale(1.07);}
+    .partner{margin-left:auto}
+    .partner img{height:38px;opacity:.9;transition:filter .2s;}
+    .partner img:hover{filter:brightness(1.15);}
+
+    .menu{display:flex;align-items:center;gap:4px;margin-left:20px}
+    .menu>li{list-style:none;position:relative}
+    .menu>li>a,.menu>li>button{
+      appearance:none;border:0;background:transparent;color:var(--accent);
+      padding:12px 16px;border-radius:8px;cursor:pointer;font-weight:600;letter-spacing:.2px;
+      transition:background .2s, color .2s, box-shadow .2s;
+      font-family:inherit;
+    }
+    .menu>li>a:hover,.menu>li>button:hover{
+      background:rgba(11,61,145,.07);
+      color:#0077ff;
+      box-shadow:0 2px 8px rgba(0,119,255,.07);
+    }
+    .menu>li.active>a{
+      background:rgba(11,61,145,.13);
+      color:#0077ff;
+      box-shadow:0 2px 8px rgba(0,119,255,.09);
+    }
+    .dropdown{
+      position:absolute;left:0;top:100%;min-width:220px;background:var(--nav-2);border-radius:10px;overflow:hidden;display:none;animation:fadeInMenu .25s;
+      box-shadow:0 8px 24px rgba(11,61,145,.08);
+    }
+    @keyframes fadeInMenu {
+      from { opacity:0; transform:translateY(10px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    .menu>li:hover .dropdown{display:block}
+    .dropdown a{
+      display:block;color:var(--accent);padding:10px 14px;transition:background .2s
+    }
+    .dropdown a:hover{
+      background:rgba(11,61,145,.07);
+      color:#0077ff;
+    }
+    .hamb{display:none;margin-left:8px}
+    .hamb button{
+      background:rgba(11,61,145,.07);
+      color:var(--accent);
+      border:1px solid #e0e0e0;
+      width:42px; height:42px; border-radius:10px;
+      cursor:pointer;
+      transition:background .2s, box-shadow .2s;
+      box-shadow:0 2px 8px rgba(0,119,255,.07);
+    }
+    .hamb button:hover{
+      background:rgba(11,61,145,.13);
+      box-shadow:0 4px 12px rgba(0,119,255,.13);
+    }
+    @media (max-width:980px){
+      .partner{display:none}
+      .menu{
+        display:none;position:fixed;left:0;right:0;top:74px;background:var(--nav-2);flex-direction:column;padding:10px;
+        box-shadow:0 10px 24px rgba(11,61,145,.10);
+      }
+      .menu.open{display:flex;animation:fadeInMenu .3s;}
+      .menu>li{width:100%}
+      .menu>li>a,.menu>li>button{width:100%;text-align:left}
+      .dropdown{position:static;display:none;background:transparent}
+      .menu>li.open .dropdown{display:block}
+      .hamb{display:block;margin-left:auto}
+    }
+
+    .hero{
+      position:relative;
+      /* Use main-page.jpg as background */
+      background:linear-gradient(rgba(0,60,150,.45),rgba(0,60,150,.45)),url('img/main-page.jpg') center/cover no-repeat;
+      color:#fff;text-align:center;padding:120px 18px;
+      animation: heroFadeIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes heroFadeIn {
+      from { opacity:0; transform:translateY(30px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    .hero h1{
+      font-size:clamp(2rem,4vw,3rem);margin-bottom:16px;
+      text-shadow:0 3px 8px rgba(0,0,0,.35);
+      letter-spacing:0.5px;
+      animation: fadeInUp 1.1s .2s both;
+    }
+    .hero p{
+      max-width:800px;margin:0 auto 28px;color:#e3eefb;font-weight:500;
+      animation: fadeInUp 1.1s .4s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(24px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    .btn{
+      display:inline-block;background:var(--grad);color:#fff;padding:12px 20px;border-radius:10px;
+      font-weight:600;box-shadow:0 4px 12px rgba(0,150,255,.3);
+      transition:transform .15s,box-shadow .15s, background .2s;
+      font-family:inherit;
+      animation: fadeInUp 1.1s .6s both;
+    }
+    .btn:hover{
+      transform:translateY(-2px) scale(1.04);
+      box-shadow:0 6px 16px rgba(0,150,255,.4);
+      background:linear-gradient(135deg,#00c2ff,#0077ff);
+    }
+
+    section{
+      max-width:var(--max);margin:80px auto;padding:0 18px;
+      opacity:0;animation:fadeInSection 1.1s .3s forwards;
+      flex: 1 0 auto;
+    }
+    @keyframes fadeInSection {
+      from { opacity:0; transform:translateY(30px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    h2{font-size:1.9rem;margin-bottom:16px;color:var(--nav);font-weight:700;letter-spacing:.2px;}
+    p{margin-bottom:14px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:800px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;
+      opacity:0;transform:translateY(24px) scale(.98);
+      animation:cardFadeIn .8s cubic-bezier(.4,0,.2,1) forwards;
+      animation-delay:.5s;
+      transition:box-shadow .2s,transform .2s;
+    }
+    .card:hover{
+      box-shadow:0 12px 32px rgba(0,150,255,.10);
+      transform:translateY(-4px) scale(1.025);
+    }
+    @keyframes cardFadeIn {
+      to { opacity:1; transform:translateY(0) scale(1);}
+    }
+
+    footer{
+      background:linear-gradient(90deg,#0b3d91 70%,#0077ff 100%);
+      color:#fff;
+      text-align:center;
+      padding:48px 18px 36px 18px;
+      margin-top:80px;
+      font-size:1.13rem;
+      letter-spacing:.1px;
+      box-shadow:0 -2px 24px rgba(0,60,150,.08);
+      flex-shrink: 0;
+    }
+    footer strong{color:#fff;}
+    @media (max-width:600px){
+      footer{font-size:1em;padding:32px 8px 24px 8px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand"><img src="img/logo.png" alt="MN Kuljetus Oy"></a>
+      <ul class="menu" id="menu">
+        <li class="active"><a href="index.html">ETUSIVU</a></li>
+        <li tabindex="0">
+          <button>PALVELUT</button>
+          <div class="dropdown">
+            <a href="kuljetuspalvelut.html">Kuljetuspalvelut</a>
+            <a href="varastointipalvelut.html">Varastointipalvelut</a>
+            <a href="liiketila.html">Liiketila</a>
+            <a href="koulutus.html">Koulutus- ja kokoustilat</a>
+          </div>
+        </li>
+        <li tabindex="0">
+          <button>YRITYS</button>
+          <div class="dropdown">
+            <a href="kalusto.html">Kalusto</a>
+            <a href="historia.html">Historia</a>
+          </div>
+        </li>
+        <li><a href="yhteystiedot.html">YHTEYSTIEDOT</a></li>
+        <li><a href="ota-yhteytta.html">OTA YHTEYTTÄ</a></li>
+      </ul>
+      <div class="hamb"><button aria-label="Avaa valikko" onclick="toggleMenu()">☰</button></div>
+      <div class="partner"><img src="assets/partner-badge.png" alt=""></div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <h1>Luotettavaa kuljetuspalvelua vuodesta 2004</h1>
+    <p>Toimimme Länsi- ja Etelä-Suomessa vuoden jokaisena päivänä. Moderni FRC/FNA-kalusto ja satelliittiseuranta takaavat turvallisen ja täsmällisen toimituksen.</p>
+    <a class="btn" href="kuljetuspalvelut.html">Tutustu palveluihin</a>
+  </header>
+
+  <section>
+    <h2>Miksi valita MN Kuljetus Oy</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <p>
+          <strong>Perheyritys 2004–</strong><br>
+          Juuret Satakunnassa, palvelu koko Länsi- ja Etelä-Suomeen.<br>
+          <span style="color:var(--muted);font-size:0.98em;">
+            Asiakkaamme arvostavat henkilökohtaista palvelua ja joustavuutta. Olemme kasvaneet vakaasti, mutta pidämme kiinni perhearvoista ja pitkäaikaisista asiakassuhteista.
+          </span>
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          <strong>Ajantasainen kalusto</strong><br>
+          FRC ja FNA -luokitukset, reaaliaikainen seuranta.<br>
+          <span style="color:var(--muted);font-size:0.98em;">
+            Käytössämme on modernit ja ympäristöystävälliset ajoneuvot, jotka soveltuvat elintarvikkeiden ja muiden vaativien tuotteiden kuljetukseen. Satelliittiseuranta mahdollistaa toimitusten tarkan seurannan.
+          </span>
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          <strong>Selkeät SLA:t</strong><br>
+          Lupaamme vain sen minkä voimme toimittaa – ja toimitamme.<br>
+          <span style="color:var(--muted);font-size:0.98em;">
+            Toimitusvarmuus ja läpinäkyvät sopimukset ovat toimintamme ytimessä. Asiakkaamme voivat luottaa aikatauluihin ja sovittuihin palvelutasoihin.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="max-width:900px;margin:0 auto;">
+      <strong style="color:#0b3d91;font-size:1.15em;">MN Kuljetus Oy</strong><br>
+      <span style="color:#fff;">Perheyritys vuodesta 2004</span><br>
+      <span style="color:#e3eefb;">Palvelemme Länsi- ja Etelä-Suomessa</span><br>
+      <span style="color:#b6d6f7;">Y-tunnus: 1234567-8 | info@mnkuljetus.fi | 040 123 4567</span><br>
+      <span style="color:#cfe7ff;">© 2025 MN Kuljetus Oy – Kaikki oikeudet pidätetään</span>
+    </div>
+  </footer>
+  <style>
+    /* ...existing code... */
+    footer{
+      background:linear-gradient(90deg,#0b3d91 70%,#0077ff 100%);
+      color:#fff;
+      text-align:center;
+      padding:48px 18px 36px 18px;
+      margin-top:80px;
+      font-size:1.13rem;
+      letter-spacing:.1px;
+      box-shadow:0 -2px 24px rgba(0,60,150,.08);
+      flex-shrink: 0;
+    }
+    footer strong{color:#fff;}
+    @media (max-width:600px){
+      footer{font-size:1em;padding:32px 8px 24px 8px;}
+    }
+    /* ...existing code... */
+  </style>
+  <script>
+    function toggleMenu(){ document.getElementById('menu').classList.toggle('open'); }
+    document.querySelectorAll('.menu > li > button').forEach(btn=>{
+      btn.addEventListener('click',e=>{
+        if(window.matchMedia('(max-width:980px)').matches){ e.currentTarget.parentElement.classList.toggle('open'); }
+      });
+    });
+  </script>
+</body>
+</html>
