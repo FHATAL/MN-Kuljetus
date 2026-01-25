@@ -72,7 +72,7 @@ const Hero = () => {
             {/* Bottom Decor */}
             <div className="absolute bottom-12 left-0 right-0 z-20 hidden md:block">
                 <div className="container">
-                    <div className="flex gap-12 text-[10px] font-black tracking-[0.4em] uppercase text-dark/20">
+                    <div className="flex gap-12 text-[10px] font-black tracking-[0.4em] uppercase text-dark/60">
                         <span>FRC / FNA SERTIFIOITU</span>
                         <span>SATELLIITTISEURANTA</span>
                         <span>24/7 PALVELU</span>

@@ -104,29 +104,31 @@ const Home = () => {
             </section>
 
             {/* Industrial CTA Section */}
-            <section className="py-20 md:py-40 container">
-                <div className="relative bg-slate-50 rounded-[40px] md:rounded-[60px] p-8 md:p-24 overflow-hidden border border-black/5">
-                    <div className="absolute top-0 right-0 w-full h-full opacity-10 z-0 scale-150 grayscale blur-sm">
-                        <img src="/src/assets/images/transport_main.jpg" alt="Bg" className="w-full h-full object-cover" />
-                    </div>
+            <section className="py-12 md:py-24">
+                <div className="container">
+                    <div className="relative bg-slate-50 rounded-[40px] md:rounded-[60px] p-8 md:p-24 overflow-hidden border border-black/5">
+                        <div className="absolute top-0 right-0 w-full h-full opacity-10 z-0 scale-150 grayscale blur-sm">
+                            <img src="/src/assets/images/transport_main.jpg" alt="Bg" className="w-full h-full object-cover" />
+                        </div>
 
-                    <div className="relative z-20 max-w-3xl">
-                        <h2 className="text-4xl md:text-7xl font-black mb-10 leading-[0.9] tracking-tighter text-dark">
-                            VALMIINA <br />
-                            <span className="text-secondary">LIIKKEESEEN?</span>
-                        </h2>
-                        <p className="text-lg md:text-2xl text-dark/60 mb-12 font-medium leading-relaxed">
-                            Ota yhteyttä ja anna meidän suunnitella teille optimaaliset logistiikkaratkaisut jo tänään.
-                        </p>
-                        <Link to="/ota-yhteytta">
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="bg-secondary text-white px-8 py-5 md:px-12 md:py-7 rounded-2xl font-black text-lg md:text-xl flex items-center gap-4 transition-all shadow-2xl shadow-secondary/30"
-                            >
-                                PYYDÄ TARJOUS <ArrowRight size={24} className="md:w-7 md:h-7" />
-                            </motion.button>
-                        </Link>
+                        <div className="relative z-20 max-w-3xl">
+                            <h2 className="text-4xl md:text-7xl font-black mb-10 leading-[0.9] tracking-tighter text-dark">
+                                VALMIINA <br />
+                                <span className="text-secondary">LIIKKEESEEN?</span>
+                            </h2>
+                            <p className="text-lg md:text-2xl text-dark/60 mb-12 font-medium leading-relaxed">
+                                Ota yhteyttä ja anna meidän suunnitella teille optimaaliset logistiikkaratkaisut jo tänään.
+                            </p>
+                            <Link to="/ota-yhteytta">
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="bg-secondary text-white px-8 py-5 md:px-12 md:py-7 rounded-2xl font-black text-lg md:text-xl flex items-center gap-4 transition-all shadow-2xl shadow-secondary/30"
+                                >
+                                    PYYDÄ TARJOUS <ArrowRight size={24} className="md:w-7 md:h-7" />
+                                </motion.button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -37,7 +37,7 @@ const TransportServices = () => {
             </section>
 
             {/* Main Content Grid */}
-            <section className="py-20 md:py-56 container">
+            <section className="py-32 md:py-56 container">
                 <div className="grid lg:grid-cols-2 gap-12 md:gap-40 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -86,39 +86,42 @@ const TransportServices = () => {
                 </div>
             </section>
 
-            {/* Quality Blocks - Redesigned & Restored */}
-            <section className="pt-16 pb-24 md:pt-32 md:pb-64 container">
-                <div className="grid md:grid-cols-3 gap-6 md:gap-12">
-                    {[
-                        { title: "LUOTETTAVUUS", desc: "Täsmälliset saapumisajat ovat lupauksemme ydin." },
-                        { title: "SERTIFIOINTI", desc: "Kuljettajillamme on korkein ammatillinen osaaminen." },
-                        { title: "EKOLOGISUUS", desc: "Vähäpäästöinen kalusto säästää ympäristöä." }
-                    ].map((item, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="glass-card p-8 md:p-10 rounded-[40px] border-black/5 hover:bg-slate-50 transition-all"
-                        >
-                            <div className="text-secondary font-black text-xs tracking-[0.3em] mb-6 uppercase">{item.title}</div>
-                            <p className="text-lg md:text-xl text-dark/60 font-medium leading-relaxed">{item.desc}</p>
-                        </motion.div>
-                    ))}
+            <section className="pt-16 pb-24 md:pt-24 md:pb-48">
+                <div className="container">
+                    <div className="grid md:grid-cols-3 gap-6 md:gap-12">
+                        {[
+                            { title: "LUOTETTAVUUS", desc: "Täsmälliset saapumisajat ovat lupauksemme ydin." },
+                            { title: "SERTIFIOINTI", desc: "Kuljettajillamme on korkein ammatillinen osaaminen." },
+                            { title: "EKOLOGISUUS", desc: "Vähäpäästöinen kalusto säästää ympäristöä." }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="glass-card p-8 md:p-10 rounded-[40px] border-black/5 hover:bg-slate-50 transition-all"
+                            >
+                                <div className="text-secondary font-black text-xs tracking-[0.3em] mb-6 uppercase">{item.title}</div>
+                                <p className="text-lg md:text-xl text-dark/60 font-medium leading-relaxed">{item.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Mini CTA */}
-            <section className="py-20 md:py-40 container">
-                <Link to="/ota-yhteytta">
-                    <div className="bg-slate-50 hover:bg-slate-100 p-8 md:p-16 rounded-[40px] md:rounded-[60px] flex flex-wrap justify-between items-center gap-8 md:gap-12 group transition-all border border-black/5 shadow-xl shadow-black/5">
-                        <h3 className="text-3xl md:text-5xl font-black tracking-tight text-dark">TARVITSETKO <span className="text-secondary">KULJETUSTA?</span></h3>
-                        <div className="w-20 h-20 rounded-full bg-dark text-white flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all shadow-xl">
-                            <ArrowRight size={32} />
+            <section className="py-12 md:py-24">
+                <div className="container">
+                    <Link to="/ota-yhteytta">
+                        <div className="bg-slate-50 hover:bg-slate-100 p-8 md:p-24 rounded-[40px] md:rounded-[60px] flex flex-wrap justify-between items-center gap-8 md:gap-12 group transition-all border border-black/5 shadow-xl shadow-black/5">
+                            <h3 className="text-3xl md:text-5xl font-black tracking-tight text-dark">TARVITSETKO <span className="text-secondary">KULJETUSTA?</span></h3>
+                            <div className="w-20 h-20 rounded-full bg-dark text-white flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all shadow-xl">
+                                <ArrowRight size={32} />
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </section>
         </div>
     )

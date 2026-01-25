@@ -42,10 +42,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled && !isOpen ? 'bg-white/90 backdrop-blur-xl border-b border-black/5 py-4' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled && !isOpen ? 'bg-white/90 backdrop-blur-xl border-b border-black/5 py-1' : 'bg-transparent py-4'}`}>
       <div className="container flex items-center justify-between">
         <Link to="/" className="relative z-10">
-          <img src={logo} alt="MN Kuljetus" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="MN Kuljetus" className="h-14 md:h-[4.5rem] w-auto" />
         </Link>
 
         {/* Desktop Nav */}
