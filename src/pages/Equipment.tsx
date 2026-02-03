@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion'
 import { Truck, ShieldCheck, Thermometer, MapPin } from 'lucide-react'
 
+import fleet1 from '../assets/images/fleet_1.jpg'
+import fleet2 from '../assets/images/fleet_2.jpg'
+import fleet3 from '../assets/images/fleet_3.jpg'
+import fleet4 from '../assets/images/fleet_4.jpg'
+import fleet5 from '../assets/images/fleet_5.jpg'
+import fleet6 from '../assets/images/fleet_6.jpg'
+import fleet7 from '../assets/images/fleet_7.jpg'
+import fleet8 from '../assets/images/fleet_8.jpg'
+
 const Equipment = () => {
     const fleet = [
         { title: "FRC-LUOKITUS", icon: <Thermometer /> },
@@ -44,14 +53,14 @@ const Equipment = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
-                        "/src/assets/images/fleet_1.jpg",
-                        "/src/assets/images/fleet_2.jpg",
-                        "/src/assets/images/fleet_3.jpg",
-                        "/src/assets/images/fleet_4.jpg",
-                        "/src/assets/images/fleet_5.jpg",
-                        "/src/assets/images/fleet_6.jpg",
-                        "/src/assets/images/fleet_7.jpg",
-                        "/src/assets/images/fleet_8.jpg"
+                        fleet1,
+                        fleet2,
+                        fleet3,
+                        fleet4,
+                        fleet5,
+                        fleet6,
+                        fleet7,
+                        fleet8
                     ].map((src, i) => (
                         <motion.div
                             key={i}

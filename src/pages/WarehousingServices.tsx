@@ -2,6 +2,12 @@ import { motion } from 'framer-motion'
 import { Warehouse, Box, Shield, Zap, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import warehouseMain from '../assets/images/warehouse_main.jpg'
+import whExt1 from '../assets/images/warehouse_exterior_1.jpg'
+import whInt1 from '../assets/images/warehouse_interior_1.jpg'
+import whExt2 from '../assets/images/warehouse_exterior_2.jpg'
+import whExt3 from '../assets/images/warehouse_exterior_3.jpg'
+
 const WarehousingServices = () => {
     return (
         <div className="bg-white min-h-screen">
@@ -33,7 +39,7 @@ const WarehousingServices = () => {
                         className="order-2 lg:order-1 relative"
                     >
                         <div className="relative aspect-video bg-slate-100 rounded-[50px] overflow-hidden border border-black/5">
-                            <img src="/src/assets/images/warehouse_main.jpg" alt="Warehouse" className="w-full h-full object-cover grayscale opacity-90" />
+                            <img src={warehouseMain} alt="Warehouse" className="w-full h-full object-cover grayscale opacity-90" />
                         </div>
                     </motion.div>
 
@@ -82,10 +88,10 @@ const WarehousingServices = () => {
 
                     <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                         {[
-                            "/src/assets/images/warehouse_exterior_1.jpg",
-                            "/src/assets/images/warehouse_interior_1.jpg",
-                            "/src/assets/images/warehouse_exterior_2.jpg",
-                            "/src/assets/images/warehouse_exterior_3.jpg"
+                            whExt1,
+                            whInt1,
+                            whExt2,
+                            whExt3
                         ].map((src, i) => (
                             <motion.div
                                 key={i}

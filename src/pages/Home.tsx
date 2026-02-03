@@ -3,6 +3,8 @@ import Hero from '../components/Hero'
 import { Truck, Shield, Clock, ArrowRight, BarChart3, Users2, Globe2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import transportMain from '../assets/images/transport_main.jpg'
+
 const Home = () => {
     const features = [
         {
@@ -108,7 +110,7 @@ const Home = () => {
                 <div className="container">
                     <div className="relative bg-slate-50 rounded-[40px] md:rounded-[60px] p-8 md:p-24 overflow-hidden border border-black/5">
                         <div className="absolute top-0 right-0 w-full h-full opacity-10 z-0 scale-150 grayscale blur-sm">
-                            <img src="/src/assets/images/transport_main.jpg" alt="Bg" className="w-full h-full object-cover" />
+                            <img src={transportMain} alt="Bg" className="w-full h-full object-cover" />
                         </div>
 
                         <div className="relative z-20 max-w-3xl">

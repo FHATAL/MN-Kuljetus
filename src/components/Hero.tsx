@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import heroMain from '../assets/images/hero_main.jpg'
 
 const Hero = () => {
     return (
@@ -15,7 +16,7 @@ const Hero = () => {
                     className="w-full h-full"
                 >
                     <img
-                        src="/src/assets/images/hero_main.jpg"
+                        src={heroMain}
                         alt="MN Kuljetus Truck"
                         className="w-full h-full object-cover grayscale"
                     />

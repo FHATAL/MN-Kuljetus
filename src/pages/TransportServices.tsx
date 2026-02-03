@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { Truck, MapPin, BadgeCheck, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import transportMain from '../assets/images/transport_main.jpg'
+
 const TransportServices = () => {
     const serviceDetails = [
         {
@@ -79,7 +81,7 @@ const TransportServices = () => {
                         className="relative"
                     >
                         <div className="relative aspect-[4/5] bg-slate-100 rounded-[50px] overflow-hidden border border-black/5 shadow-2xl shadow-black/5">
-                            <img src="/src/assets/images/transport_main.jpg" alt="Truck" className="w-full h-full object-cover grayscale opacity-90 transition-transform duration-1000" />
+                            <img src={transportMain} alt="Truck" className="w-full h-full object-cover grayscale opacity-90 transition-transform duration-1000" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent" />
                         </div>
                     </motion.div>

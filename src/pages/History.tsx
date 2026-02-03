@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import suomi100 from '../assets/images/Suomi100.jpg'
 
+import historyMain from '../assets/images/history_main.jpg'
+
 const History = () => {
     const milestones = [
         {
@@ -69,7 +71,7 @@ const History = () => {
                     viewport={{ once: true }}
                     className="mb-32 relative aspect-video bg-slate-50 rounded-[60px] overflow-hidden border border-black/5 shadow-2xl shadow-black/5"
                 >
-                    <img src="/src/assets/images/history_main.jpg" alt="MN Kuljetus History" className="w-full h-full object-cover grayscale opacity-80" />
+                    <img src={historyMain} alt="MN Kuljetus History" className="w-full h-full object-cover grayscale opacity-80" />
                     <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
                 </motion.div>
 

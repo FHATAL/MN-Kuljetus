@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { Building2, CheckCircle2, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import commercialMain from '../assets/images/commercial_main.jpg'
+
 const CommercialSpaces = () => {
     return (
         <div className="bg-white min-h-screen">
@@ -63,7 +65,7 @@ const CommercialSpaces = () => {
                             className="relative"
                         >
                             <div className="relative aspect-video bg-slate-100 rounded-[50px] overflow-hidden border border-black/5 shadow-2xl shadow-black/5">
-                                <img src="/src/assets/images/commercial_main.jpg" alt="Liiketila" className="w-full h-full object-cover grayscale opacity-80 transition-transform duration-1000" />
+                                <img src={commercialMain} alt="Liiketila" className="w-full h-full object-cover grayscale opacity-80 transition-transform duration-1000" />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
                             </div>
                         </motion.div>
