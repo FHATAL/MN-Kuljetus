@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Truck, MapPin, BadgeCheck, ArrowRight } from 'lucide-react'
+import { Truck, MapPin, BadgeCheck, ArrowRight, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import transportMain from '../assets/images/transport_main.jpg'
@@ -15,6 +15,11 @@ const TransportServices = () => {
             title: "REAALIAIKAINEN SEURANTA",
             desc: "Satelliittiseuranta takaa täydellisen läpinäkyvyyden ja tarkat saapumisajat jokaiselle kuormalle.",
             icon: <MapPin />
+        },
+        {
+            title: "PIKARAHTI",
+            desc: "Pikarahti kuljetukset Suomessa.",
+            icon: <Zap />
         }
     ]
 

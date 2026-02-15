@@ -1,24 +1,32 @@
 import { motion } from 'framer-motion'
 import suomi100 from '../assets/images/Suomi100.jpg'
+import niinivirta60 from '../assets/images/niinivirta60.png'
 
 import historyMain from '../assets/images/history_main.jpg'
 
 const History = () => {
     const milestones = [
         {
+            year: "2000-LUVUN ALKU",
+            title: "HAASTAVAT VUODET",
+            desc: "Yritys kohtaa suhdanteista johtuvia kovia taloudellisia haasteita. Perhe päättää kuitenkin jatkaa ja tekee merkittäviä ponnisteluja yrityksen pelastamiseksi."
+        },
+        {
             year: "2004",
             title: "MN KULJETUS OY:N SYNTY",
             desc: "Suku tekee yritysjärjestelyjä ja sukupolvenvaihdoksen. Mikko Niinivirta perustaa MN Kuljetus Oy:n jatkamaan kotimaan logistiikkaa. Yritys aloittaa toimintansa painottaen elintarvike- ja kappaletavarakuljetuksia."
         },
         {
-            year: "2000-LUVUN LOPPU",
-            title: "HAASTAVAT VUODET",
-            desc: "Yritys kohtaa suhdanteista johtuvia kovia taloudellisia haasteita. Perhe päättää kuitenkin jatkaa ja tekee merkittäviä ponnisteluja yrityksen pelastamiseksi."
-        },
-        {
             year: "2010–2015",
             title: "UUSI NOUSU JA ERIKOISTUMINEN",
             desc: "Yritys vakiinnuttaa asemansa Länsi-Suomen logistiikkaketjussa. Painopiste siirtyy entistä vahvemmin lämpötilasäädeltyihin kuljetuksiin ja vaativiin konttikuljetuksiin."
+        },
+        {
+            year: "2014",
+            title: "60-VUOTISJUHLA",
+            desc: "Niinivirta täytti pyöreitä vuosia. 60 vuotta luotettavaa kuljetuspalvelua suomalaisille yrityksille.",
+            special: true,
+            image: niinivirta60
         },
         {
             year: "2017",
@@ -97,7 +105,7 @@ const History = () => {
                                             <p className="text-dark/60 font-medium">{m.desc}</p>
                                             {m.special && (
                                                 <div className="mt-6 flex justify-center md:justify-end">
-                                                    <img src={suomi100} alt="Suomi 100" className="w-48 rounded-xl shadow-lg border border-black/5" />
+                                                    <img src={m.image || suomi100} alt={m.title} className="w-48 rounded-xl shadow-lg border border-black/5" />
                                                 </div>
                                             )}
                                         </div>
@@ -116,7 +124,7 @@ const History = () => {
                                             <p className="text-dark/60 font-medium">{m.desc}</p>
                                             {m.special && (
                                                 <div className="mt-6 flex justify-center md:justify-end">
-                                                    <img src={suomi100} alt="Suomi 100" className="w-48 rounded-xl shadow-lg border border-black/5" />
+                                                    <img src={m.image || suomi100} alt={m.title} className="w-48 rounded-xl shadow-lg border border-black/5" />
                                                 </div>
                                             )}
                                         </div>

@@ -4,6 +4,7 @@ import { Truck, Shield, Clock, ArrowRight, BarChart3, Users2, Globe2 } from 'luc
 import { Link } from 'react-router-dom'
 
 import transportMain from '../assets/images/transport_main.jpg'
+import niinivirta60 from '../assets/images/niinivirta60.png'
 
 const Home = () => {
     const features = [
@@ -79,6 +80,23 @@ const Home = () => {
                                 </p>
                             </motion.div>
                         ))}
+                    </div>
+
+                    <div className="mt-20 md:mt-32 flex flex-col items-center justify-center text-center">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="bg-white p-8 md:p-12 rounded-[50px] shadow-xl shadow-black/5 border border-black/5 max-w-2xl w-full"
+                        >
+                            <img src={niinivirta60} alt="Niinivirta 60 years" className="h-20 md:h-32 object-contain mx-auto mb-8" />
+                            <div className="text-secondary font-black tracking-[0.3em] uppercase text-xs mb-4">PERHEYRITYS</div>
+                            <h3 className="text-2xl md:text-4xl font-black text-dark mb-4 tracking-tight">JO VUODESTA 1954</h3>
+                            <p className="text-dark/60 font-medium">
+                                Yli kuusi vuosikymmentä suomalaista kuljetusosaamista.
+                                Sukupolvien yli kestävä laatu.
+                            </p>
+                        </motion.div>
                     </div>
                 </div>
             </section>

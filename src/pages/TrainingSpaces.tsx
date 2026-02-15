@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Users, Wifi, Coffee, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { GraduationCap, Users, Wifi, Coffee } from 'lucide-react'
+import ContactForm from '../components/ContactForm'
 import img6 from '../assets/images/training/IMG-20260120-WA0006.jpg'
 import img7 from '../assets/images/training/IMG-20260120-WA0007.jpg'
 import img8 from '../assets/images/training/IMG-20260120-WA0008.jpg'
@@ -96,15 +96,16 @@ const TrainingSpaces = () => {
             </section>
 
             <section className="py-12 md:py-24">
-                <div className="container">
-                    <Link to="/ota-yhteytta">
-                        <div className="bg-slate-50 rounded-[40px] md:rounded-[60px] p-8 md:p-24 text-center hover:bg-slate-100 transition-all group shadow-2xl shadow-black/5 border border-black/5">
-                            <h2 className="text-3xl md:text-7xl font-black mb-10 tracking-tighter text-dark">VARAA <span className="text-secondary">TILAISUUS</span></h2>
-                            <div className="inline-flex items-center gap-4 bg-secondary text-white px-8 py-5 md:px-12 md:py-7 rounded-2xl font-black text-lg md:text-xl group-hover:scale-105 transition-all shadow-xl shadow-secondary/20">
-                                OTA YHTEYTTÄ <ArrowRight size={28} />
-                            </div>
-                        </div>
-                    </Link>
+                <div className="container max-w-4xl">
+                    <div className="glass-card p-8 md:p-16 rounded-[40px] md:rounded-[60px] border-black/5 shadow-2xl shadow-black/5 bg-white">
+                        <ContactForm
+                            formId="MEETING_FORM_ID"
+                            defaultSubject="Kokoustilat"
+                            showSubjectSelect={false}
+                            title="VARAA TILAISUUS"
+                            description="Täytä lomake, niin olemme sinuun yhteydessä tilavarauksesta."
+                        />
+                    </div>
                 </div>
             </section>
         </div>

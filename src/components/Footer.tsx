@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import niinivirta60 from '../assets/images/niinivirta60.png'
 
 const Footer = () => {
     return (
@@ -9,6 +10,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-20 mb-20 md:mb-40">
                     <div className="lg:col-span-2">
                         <h3 className="text-3xl md:text-4xl font-black mb-10 tracking-tighter text-dark">MN KULJETUS OY</h3>
+                        <img src={niinivirta60} alt="Niinivirta 60" className="h-16 object-contain mb-8 opacity-80" />
                         <p className="text-dark mb-10 max-w-md font-medium leading-relaxed">
                             Ammattimaista logistiikkaa ja perheyrityksen luotettavuutta vuodesta 2004.
                             Toimimme ympäri vuorokauden Länsi- ja Etelä-Suomen alueella.
