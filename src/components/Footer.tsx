@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import niinivirta60 from '../assets/images/niinivirta60.png'
 
