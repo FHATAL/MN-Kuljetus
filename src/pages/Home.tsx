@@ -54,7 +54,7 @@ const Home = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-3xl md:text-7xl font-black max-w-4xl tracking-tighter leading-none text-dark"
+                            className="text-3xl lg:text-7xl lg:text-5xl md:text-4xl font-black max-w-4xl tracking-tighter leading-none text-dark"
                         >
                             MIKSI VALITA <span className="text-secondary">MN KULJETUS?</span>
                         </motion.h2>
@@ -93,7 +93,7 @@ const Home = () => {
                             <div className="text-secondary font-black tracking-[0.3em] uppercase text-xs mb-4">PERHEYRITYS</div>
                             <h3 className="text-2xl md:text-4xl font-black text-dark mb-4 tracking-tight">JO VUODESTA 1954</h3>
                             <p className="text-dark/60 font-medium">
-                                Yli kuusi vuosikymmentä suomalaista kuljetusosaamista.
+                                Yli seitsemän vuosikymmentä suomalaista kuljetusosaamista.
                                 Sukupolvien yli kestävä laatu.
                             </p>
                         </motion.div>
@@ -102,7 +102,7 @@ const Home = () => {
             </section>
 
             {/* Numbers Section */}
-            <section className="py-20 md:py-40 relative bg-dark">
+            <section className="py-20 lg:py-40 md:py-24 relative bg-dark">
                 <div className="container relative z-10">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                         {stats.map((s, i) => (
@@ -115,7 +115,7 @@ const Home = () => {
                                 className="text-center"
                             >
                                 <div className="text-white/10 mb-6 flex justify-center scale-150">{s.icon}</div>
-                                <div className="text-5xl md:text-8xl font-black text-white mb-2 tracking-tighter">{s.value}</div>
+                                <div className="text-5xl lg:text-8xl lg:text-6xl md:text-4xl font-black text-white mb-2 tracking-tighter">{s.value}</div>
                                 <div className="text-secondary font-black text-xs uppercase tracking-widest">{s.label}</div>
                             </motion.div>
                         ))}
@@ -126,13 +126,13 @@ const Home = () => {
             {/* Industrial CTA Section */}
             <section className="py-12 md:py-24">
                 <div className="container">
-                    <div className="relative bg-slate-50 rounded-[40px] md:rounded-[60px] p-8 md:p-24 overflow-hidden border border-black/5">
+                    <div className="relative bg-slate-50 rounded-[40px] md:rounded-[60px] p-8 lg:p-24 p-12 overflow-hidden border border-black/5">
                         <div className="absolute top-0 right-0 w-full h-full opacity-10 z-0 scale-150 grayscale blur-sm">
                             <img src={transportMain} alt="Bg" className="w-full h-full object-cover" />
                         </div>
 
                         <div className="relative z-20 max-w-3xl">
-                            <h2 className="text-4xl md:text-7xl font-black mb-10 leading-[0.9] tracking-tighter text-dark">
+                            <h2 className="text-4xl lg:text-7xl lg:text-5xl md:text-4xl font-black mb-10 leading-[0.9] tracking-tighter text-dark">
                                 VALMIINA <br />
                                 <span className="text-secondary">LIIKKEESEEN?</span>
                             </h2>

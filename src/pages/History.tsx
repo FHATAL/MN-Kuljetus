@@ -9,12 +9,12 @@ const History = () => {
         {
             year: "2000-LUVUN ALKU",
             title: "HAASTAVAT VUODET",
-            desc: "Yritys kohtaa suhdanteista johtuvia kovia taloudellisia haasteita. Perhe päättää kuitenkin jatkaa ja tekee merkittäviä ponnisteluja yrityksen pelastamiseksi."
+            desc: "Vuosikymmeniä toiminut Niinivirta-suvun Niinivirta Transport Oy ajautuu konkurssiin vuonna 2001. Yritys kohtaa suhdanteista johtuvia kovia taloudellisia haasteita. Niinivirrat tekevät merkittäviä ponnisteluja kuljetusyritystoiminnan jatkamiseen. Vuosituhannen vaihtuminen merkitsi uuden alkua, perustettiin Niinivirta International Oy."
         },
         {
             year: "2004",
             title: "MN KULJETUS OY:N SYNTY",
-            desc: "Suku tekee yritysjärjestelyjä ja sukupolvenvaihdoksen. Mikko Niinivirta perustaa MN Kuljetus Oy:n jatkamaan kotimaan logistiikkaa. Yritys aloittaa toimintansa painottaen elintarvike- ja kappaletavarakuljetuksia."
+            desc: "Suku tekee yritysjärjestelyjä ja sukupolvenvaihdoksen. Mikko Niinivirta perustaa MN Kuljetus Oy:n jatkamaan kotimaan logistiikkaa. Yritys aloittaa toimintansa painottaen elintarvike-, kappaletavara- ja merikonttikuljetuksia."
         },
         {
             year: "2010–2015",
@@ -47,17 +47,17 @@ const History = () => {
         {
             year: "2024–2025",
             title: "NYKYAIKAINEN LOGISTIIKKA",
-            desc: "Yritys investoi kalustoon ja teknologiaan. Liikevaihto vakiintuu yli 3 miljoonan euron tasolle ja yritys työllistää noin 25–30 logistiikan ammattilaista."
+            desc: "Yritys investoi kalustoon ja teknologiaan. Liikevaihto vakiintuu yli 3 miljoonan euron tasolle ja yritys työllistää noin 15-20 logistiikan ammattilaista."
         },
         {
             year: "2026",
             title: "NYKYHETKI",
-            desc: "MN Kuljetus Oy toimii edelleen Mikko Niinivirran johdolla. Yritys tunnetaan Satakunnassa luotettavana ja perinteitä kunnioittavana, mutta nykyaikaisena perheyrityksenä."
+            desc: "MN Kuljetus Oy toimii edelleen Mikko Niinivirran johdolla. Yritys jatkaa investointeja vähäpäästöisiin kuljetusajoneuvoihin. MN Kuljetus Oy tunnetaan Satakunnassa luotettavana ja perinteitä kunnioittavana, mutta nykyaikaisena perheyrityksenä."
         }
     ]
 
     return (
-        <div className="bg-white min-h-screen pt-32 pb-20 md:pt-48 md:pb-24">
+        <div className="bg-white min-h-screen pt-32 pb-20 lg:pt-48 md:pt-32 md:pb-24">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ const History = () => {
                     className="mb-16 md:mb-32 text-center"
                 >
                     <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">YRITYS</span>
-                    <h1 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter leading-none text-dark">
+                    <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
                         MEIDÄN <span className="text-secondary">TARINAMME</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-dark/60 max-w-3xl mx-auto font-medium leading-relaxed">

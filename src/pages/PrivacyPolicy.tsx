@@ -4,7 +4,7 @@ import { ArrowLeft, Shield } from 'lucide-react'
 
 const PrivacyPolicy = () => {
     return (
-        <div className="bg-white min-h-screen pt-32 pb-20 md:pt-48 md:pb-32">
+        <div className="bg-white min-h-screen pt-32 pb-20 lg:pt-48 md:pt-32 lg:pb-32 md:pb-24">
             <div className="container max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
                         ETUSIVULLE
                     </Link>
                     <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">TIETOSUOJA</span>
-                    <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter text-dark">
+                    <h1 className="text-4xl lg:text-6xl md:text-4xl font-black mb-6 tracking-tighter text-dark">
                         TIETOSUOJA<span className="text-secondary">SELOSTE</span>
                     </h1>
                     <p className="text-xl text-dark/70 font-medium">

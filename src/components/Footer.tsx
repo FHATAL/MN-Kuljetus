@@ -5,7 +5,7 @@ import niinivirta60 from '../assets/images/niinivirta60.png'
 
 const Footer = () => {
     return (
-        <footer className="bg-white text-dark pt-24 pb-12 md:pt-48 md:pb-24 border-t border-black/5 shadow-[0_-20px_50px_rgba(0,0,0,0.02)]">
+        <footer className="bg-white text-dark pt-24 pb-12 lg:pt-48 md:pt-32 md:pb-24 border-t border-black/5 shadow-[0_-20px_50px_rgba(0,0,0,0.02)]">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-20 mb-20 md:mb-40">
                     <div className="lg:col-span-2">
@@ -35,10 +35,6 @@ const Footer = () => {
                             <li className="flex items-start gap-4">
                                 <Phone size={20} className="text-secondary shrink-0" />
                                 <span>020 150 120</span>
-                            </li>
-                            <li className="flex items-start gap-4">
-                                <Mail size={20} className="text-secondary shrink-0" />
-                                <span>info@mnkuljetus.fi</span>
                             </li>
                             <li className="flex items-start gap-4">
                                 <MapPin size={20} className="text-secondary shrink-0" />

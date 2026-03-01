@@ -37,7 +37,7 @@ const Hero = () => {
                         <span className="inline-block py-2 px-5 bg-white border border-black/5 shadow-sm rounded-full text-secondary font-black text-xs tracking-[0.3em] uppercase mb-8">
                             LUOTETTAVAA LOGISTIIKKAA VUODESTA 2004
                         </span>
-                        <h1 className="text-5xl md:text-8xl lg:text-9xl font-black leading-[0.9] mb-8 tracking-tighter text-dark">
+                        <h1 className="text-5xl lg:text-8xl lg:text-6xl md:text-4xl lg:text-9xl font-black leading-[0.9] mb-8 tracking-tighter text-dark">
                             TÄSMÄLLISTÄ <br />
                             <span className="text-secondary">KULJETUSTA</span> <br />
                             JOKA PÄIVÄ.

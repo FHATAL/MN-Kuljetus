@@ -12,14 +12,14 @@ const WarehousingServices = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Page Header */}
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-50">
+            <section className="relative pt-32 pb-20 lg:pt-48 md:pt-32 lg:pb-32 md:pb-24 overflow-hidden bg-slate-50">
                 <div className="container relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                     >
                         <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">PALVELUT</span>
-                        <h1 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter leading-none text-dark">
+                        <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
                             VARASTOINTI<span className="text-secondary">PALVELUT</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
@@ -52,7 +52,7 @@ const WarehousingServices = () => {
                         <div className="w-20 h-20 bg-secondary/5 rounded-3xl flex items-center justify-center text-secondary mb-10 border border-secondary/10">
                             <Warehouse size={40} />
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight text-dark">Tilaa Joka Tarpeeseen</h2>
+                        <h2 className="text-3xl lg:text-5xl md:text-4xl font-black mb-8 tracking-tight text-dark">Tilaa Joka Tarpeeseen</h2>
                         <p className="text-lg md:text-xl text-dark/70 leading-relaxed mb-12 font-medium">
                             Tarjoamme monipuoliset varastopalvelut lyhyestä pitkäaikaiseen tarpeeseen.
                             Logistisesti optimaalinen sijainti mahdollistaa nopeat siirrot suoraan kuljetukseen.
@@ -60,10 +60,10 @@ const WarehousingServices = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {[
-                                { title: "ELINTARVIKKEET", icon: <Box className="text-secondary" /> },
+                                { title: "LÄMMIN VARASTO", icon: <Warehouse className="text-secondary" /> },
+                                { title: "ULKOVARASTOINTITILAA", icon: <Box className="text-secondary" /> },
                                 { title: "SUOJATTU TILA", icon: <Shield className="text-secondary" /> },
-                                { title: "JOUSTAVA VUOKRA", icon: <Zap className="text-secondary" /> },
-                                { title: "LÄMMIN VARASTO", icon: <Warehouse className="text-secondary" /> }
+                                { title: "JOUSTAVA VUOKRA", icon: <Zap className="text-secondary" /> }
                             ].map((item, i) => (
                                 <div key={i} className="glass-card p-6 rounded-2xl border-black/5 flex items-center gap-4 group hover:bg-slate-50 transition-all">
                                     <div className="p-3 bg-secondary/5 rounded-xl group-hover:bg-secondary group-hover:text-white transition-all">
@@ -83,7 +83,7 @@ const WarehousingServices = () => {
                 <div className="container relative z-10">
                     <div className="text-center mb-16">
                         <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">TILAT</span>
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tight !text-white">MONIPUOLISET <span className="text-secondary">VARASTOTILAT</span></h2>
+                        <h2 className="text-3xl lg:text-5xl md:text-4xl font-black tracking-tight !text-white">MONIPUOLISET <span className="text-secondary">VARASTOTILAT</span></h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -118,7 +118,7 @@ const WarehousingServices = () => {
                 <Link to="/ota-yhteytta">
                     <div className="relative bg-slate-50 rounded-[40px] md:rounded-[60px] p-8 md:p-20 overflow-hidden text-center group shadow-2xl shadow-black/5 border border-black/5">
                         <div className="relative z-10">
-                            <h2 className="text-3xl md:text-6xl font-black mb-8 tracking-tighter text-dark">TARVITSETKO <span className="text-secondary">VARASTOTILAA?</span></h2>
+                            <h2 className="text-3xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter text-dark">TARVITSETKO <span className="text-secondary">VARASTOTILAA?</span></h2>
                             <p className="text-lg text-dark/60 mb-10 font-medium max-w-2xl mx-auto">
                                 Ota yhteyttä, niin suunnitellaan juuri teidän tarpeisiinne sopiva varastointiratkaisu.
                             </p>

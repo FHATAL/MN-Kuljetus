@@ -19,7 +19,7 @@ const Equipment = () => {
     ]
 
     return (
-        <div className="bg-white min-h-screen pt-32 pb-20 md:pt-48 md:pb-24">
+        <div className="bg-white min-h-screen pt-32 pb-20 lg:pt-48 md:pt-32 md:pb-24">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -27,7 +27,7 @@ const Equipment = () => {
                     className="mb-16 md:mb-32"
                 >
                     <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">YRITYS</span>
-                    <h1 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter leading-none text-dark">
+                    <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
                         MODERNI <span className="text-secondary">KALUSTO</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">

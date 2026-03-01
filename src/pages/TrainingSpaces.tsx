@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Users, Wifi, Coffee } from 'lucide-react'
+import { GraduationCap, Users, Wifi, Monitor, Instagram } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
 import img6 from '../assets/images/training/IMG-20260120-WA0006.jpg'
 import img7 from '../assets/images/training/IMG-20260120-WA0007.jpg'
@@ -14,44 +14,48 @@ import img14 from '../assets/images/training/IMG-20260120-WA0014.jpg'
 const TrainingSpaces = () => {
     return (
         <div className="bg-white min-h-screen">
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-50">
+            <section className="relative pt-32 pb-20 lg:pt-48 md:pt-32 lg:pb-32 md:pb-24 overflow-hidden bg-slate-50">
                 <div className="container relative z-10">
                     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-                        <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">KOULUTUS</span>
-                        <h1 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter leading-none text-dark">
+                        <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">SIEVARIN</span>
+                        <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
                             KOKOUS<span className="text-secondary">TILAT</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
-                            Täydelliset puitteet kokouksille, koulutuksille, yritystilaisuuksille ja juhlille modernissa ympäristössä Harjavallassa.
+                            Täydelliset puitteet kokouksille, koulutuksille, yritystilaisuuksille ja juhlille avarassa ja valoisassa ympäristössä Harjavallassa.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            <section className="py-32 md:py-56">
+            <section className="py-32 lg:py-56 md:py-32">
                 <div className="container">
                     <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
                         <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                             <div className="w-20 h-20 bg-secondary/5 rounded-3xl flex items-center justify-center text-secondary mb-10 border border-secondary/10">
                                 <GraduationCap size={40} />
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight text-dark">Kaikki Valmiina</h2>
+                            <h2 className="text-3xl lg:text-5xl md:text-4xl font-black mb-8 tracking-tight text-dark">Kaikki Valmiina</h2>
                             <p className="text-lg md:text-xl text-dark/70 leading-relaxed mb-12 font-medium">
                                 Tarjoamme hyvin varustellut tilat, jotka vastaavat nykyajan kokousvaatimuksia ja taipuvat myös ikimuistoisiin juhliin.
-                                Meiltä saat myös tarvittaessa catering-palvelut tilaisuutesi yhteyteen.
+                                Alakerrassa toimivasta Lounas Sievarista tilattavissa lounas- ja catering-palvelut tilaisuutesi yhteyteen.
                             </p>
                             <div className="grid grid-cols-2 gap-8">
                                 {[
-                                    { title: "CATERING", icon: <Coffee size={24} /> },
-                                    { title: "AV-LAITTEET", icon: <Users size={24} /> },
-                                    { title: "NOPEA WI-FI", icon: <Wifi size={24} /> },
-                                    { title: "JUHLAT & KOKOUKSET", icon: <Users size={24} /> }
+                                    { title: "KOKOUKSET JA KOULUTUKSET", icon: <GraduationCap size={24} /> },
+                                    { title: "JUHLAT", icon: <Users size={24} /> },
+                                    { title: "AV-LAITTEET", icon: <Monitor size={24} /> },
+                                    { title: "NOPEA WI-FI", icon: <Wifi size={24} /> }
                                 ].map((item, i) => (
                                     <div key={i} className="flex flex-col gap-4">
                                         <div className="text-secondary">{item.icon}</div>
                                         <div className="font-black text-[10px] tracking-[0.2em] text-dark/60 uppercase">{item.title}</div>
                                     </div>
                                 ))}
+                            </div>
+                            <div className="mt-8 flex items-center gap-4 text-dark/70 font-medium">
+                                <Instagram className="text-secondary" size={24} />
+                                <span>Instatili: Sievarin kokoustila</span>
                             </div>
                         </motion.div>
 
@@ -65,12 +69,12 @@ const TrainingSpaces = () => {
             </section>
 
             {/* Gallery Section */}
-            <section className="py-32 md:py-56 bg-dark relative overflow-hidden">
+            <section className="py-32 lg:py-56 md:py-32 bg-dark relative overflow-hidden">
                 <div className="absolute inset-0 bg-secondary/5" />
                 <div className="container relative z-10">
                     <div className="text-center mb-16">
                         <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">KUVAGALLERIA</span>
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tight !text-white">TILAT <span className="text-secondary">JUHLIIN JA KOKOUKSIIN</span></h2>
+                        <h2 className="text-3xl lg:text-5xl md:text-4xl font-black tracking-tight !text-white">TILAT <span className="text-secondary">JUHLIIN JA KOKOUKSIIN</span></h2>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6 md:gap-8">

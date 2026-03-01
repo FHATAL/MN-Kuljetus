@@ -6,13 +6,13 @@ import aerial2 from '../assets/images/aerial/IMG-20260120-WA0017.jpg'
 const Contact = () => {
     const staff = [
         { name: "MIKKO NIINIVIRTA", title: "TOIMITUSJOHTAJA / MYYNTI", email: "mikko.niinivirta@mnkuljetus.fi", phone: "040 558 2667" },
-        { name: "VIRVA NIINIVIRTA", title: "KOULUTUS JA KOKOUSTILAT", email: "virva.niinivirta@mnkuljetus.fi" },
         { name: "IRMA NIINIVIRTA", title: "TALOUSJOHTAJA", email: "irma.niinivirta@mnkuljetus.fi", phone: "020 150 120" },
-        { name: "MIKA VAINIO-KETOLA", title: "AJOJÄRJESTELY", email: "ajojarjestely@mnkuljetus.fi", phone: "0400 825 027" }
+        { name: "MIKA VAINIO-KETOLA", title: "AJOJÄRJESTELY", email: "ajojarjestely@mnkuljetus.fi", phone: "0400 825 027" },
+        { name: "VIRVA NIINIVIRTA", title: "KOULUTUS JA KOKOUSTILAT", email: "virva.niinivirta@mnkuljetus.fi" }
     ]
 
     return (
-        <div className="bg-white min-h-screen pt-32 pb-20 md:pt-48 md:pb-24">
+        <div className="bg-white min-h-screen pt-32 pb-20 lg:pt-48 md:pt-32 md:pb-24">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -20,7 +20,7 @@ const Contact = () => {
                     className="mb-12 md:mb-24"
                 >
                     <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">YHTEYS</span>
-                    <h1 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter leading-none text-dark">
+                    <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
                         OTA <span className="text-secondary">YHTEYTTÄ</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-dark/60 max-w-2xl font-medium">

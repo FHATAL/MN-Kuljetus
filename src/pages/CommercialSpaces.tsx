@@ -8,14 +8,14 @@ const CommercialSpaces = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Page Header */}
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-50">
+            <section className="relative pt-32 pb-20 lg:pt-48 md:pt-32 lg:pb-32 md:pb-24 overflow-hidden bg-slate-50">
                 <div className="container relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                     >
                         <span className="text-accent font-black tracking-[0.5em] text-xs uppercase mb-4 block">KIINTEISTÖT</span>
-                        <h1 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter leading-none text-dark">
+                        <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
                             LIIKE<span className="text-accent">TILAT</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
@@ -25,7 +25,7 @@ const CommercialSpaces = () => {
                 </div>
             </section>
 
-            <section className="py-32 md:py-56">
+            <section className="py-32 lg:py-56 md:py-32">
                 <div className="container">
                     <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
                         <motion.div
@@ -36,7 +36,7 @@ const CommercialSpaces = () => {
                             <div className="w-20 h-20 bg-accent/5 rounded-3xl flex items-center justify-center text-accent mb-10 border border-accent/10">
                                 <Building2 size={40} />
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight text-dark">Tilaa Kasvulle</h2>
+                            <h2 className="text-3xl lg:text-5xl md:text-4xl font-black mb-8 tracking-tight text-dark">Tilaa Kasvulle</h2>
                             <p className="text-lg md:text-xl text-dark/70 leading-relaxed mb-12 font-medium">
                                 MN Kuljetus Oy tarjoaa joustavat ja muunneltavat tilat erilaisten yritysten tarpeisiin.
                                 Sijaintimme on ihanteellinen sekä logistiikan että asiakasvirtojen kannalta.
@@ -76,8 +76,8 @@ const CommercialSpaces = () => {
             <section className="py-12 md:py-24">
                 <div className="container">
                     <Link to="/ota-yhteytta">
-                        <div className="bg-slate-50 p-8 md:p-24 rounded-[40px] md:rounded-[60px] text-center group border border-accent/10 hover:bg-accent/5 transition-all shadow-2xl shadow-accent/5">
-                            <h2 className="text-3xl md:text-7xl font-black mb-8 tracking-tighter text-dark">ERINOMAISET <span className="text-accent">TILAT</span></h2>
+                        <div className="bg-slate-50 p-8 lg:p-24 p-12 rounded-[40px] md:rounded-[60px] text-center group border border-accent/10 hover:bg-accent/5 transition-all shadow-2xl shadow-accent/5">
+                            <h2 className="text-3xl lg:text-7xl lg:text-5xl md:text-4xl font-black mb-8 tracking-tighter text-dark">ERINOMAISET <span className="text-accent">TILAT</span></h2>
                             <div className="inline-flex items-center gap-4 bg-accent text-white px-8 py-5 md:px-12 md:py-7 rounded-2xl font-black text-lg md:text-xl group-hover:scale-105 transition-all shadow-2xl shadow-accent/20">
                                 KYSY VAPAITA TILOJA <ArrowRight size={28} />
                             </div>

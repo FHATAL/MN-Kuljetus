@@ -26,14 +26,14 @@ const TransportServices = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Page Header */}
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-50">
+            <section className="relative pt-32 pb-20 lg:pt-48 md:pt-32 lg:pb-32 md:pb-24 overflow-hidden bg-slate-50">
                 <div className="container relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                     >
                         <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">PALVELUT</span>
-                        <h1 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter leading-none text-dark">
+                        <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
                             KULJETUS<span className="text-secondary">PALVELUT</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
@@ -44,7 +44,7 @@ const TransportServices = () => {
             </section>
 
             {/* Main Content Grid */}
-            <section className="py-32 md:py-56 container">
+            <section className="py-32 lg:py-56 md:py-32 container">
                 <div className="grid lg:grid-cols-2 gap-12 md:gap-40 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -54,10 +54,9 @@ const TransportServices = () => {
                         <div className="w-20 h-20 bg-secondary/5 rounded-3xl flex items-center justify-center text-secondary mb-10 border border-secondary/10">
                             <Truck size={40} />
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight text-dark">MODERNIA LOGISTIIKKAA</h2>
+                        <h2 className="text-3xl lg:text-5xl md:text-4xl font-black mb-8 tracking-tight text-dark">MODERNIA LOGISTIIKKAA</h2>
                         <p className="text-lg md:text-xl text-dark/70 leading-relaxed mb-16 font-medium">
-                            MN Kuljetus Oy on erikoistunut varsinkin elintarvikekuljetuksiin, mutta kuljetamme ammattitaidolla myös muut tuotteet.
-                            Investoimme jatkuvasti uusimpaan teknologiaan vähentääksemme päästöjä ja parantaaksemme toimitusvarmuutta.
+                            Kuljetamme ammattitaidolla elintarvikekuljetukset, kappale- ja massatavarat sekä merikonttikuljetukset. Pikarahti ja pakettiautokuljetukset onnistuvat myös. Investoimme jatkuvasti uusimpaan teknologiaan vähentääksemme päästöjä ja parantaaksemme toimitusvarmuutta.
                         </p>
 
                         <div className="grid gap-6 md:gap-12">
@@ -121,8 +120,8 @@ const TransportServices = () => {
             <section className="py-12 md:py-24">
                 <div className="container">
                     <Link to="/ota-yhteytta">
-                        <div className="bg-slate-50 hover:bg-slate-100 p-8 md:p-24 rounded-[40px] md:rounded-[60px] flex flex-wrap justify-between items-center gap-8 md:gap-12 group transition-all border border-black/5 shadow-xl shadow-black/5">
-                            <h3 className="text-3xl md:text-5xl font-black tracking-tight text-dark">TARVITSETKO <span className="text-secondary">KULJETUSTA?</span></h3>
+                        <div className="bg-slate-50 hover:bg-slate-100 p-8 lg:p-24 p-12 rounded-[40px] md:rounded-[60px] flex flex-wrap justify-between items-center gap-8 md:gap-12 group transition-all border border-black/5 shadow-xl shadow-black/5">
+                            <h3 className="text-3xl lg:text-5xl md:text-4xl font-black tracking-tight text-dark">TARVITSETKO <span className="text-secondary">KULJETUSTA?</span></h3>
                             <div className="w-20 h-20 rounded-full bg-dark text-white flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all shadow-xl">
                                 <ArrowRight size={32} />
                             </div>
