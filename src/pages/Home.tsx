@@ -54,7 +54,7 @@ const Home = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-3xl lg:text-7xl lg:text-5xl md:text-4xl font-black max-w-4xl tracking-tighter leading-none text-dark"
+                            className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black max-w-4xl tracking-tighter leading-none text-dark"
                         >
                             MIKSI VALITA <span className="text-secondary">MN KULJETUS?</span>
                         </motion.h2>
@@ -115,7 +115,7 @@ const Home = () => {
                                 className="text-center"
                             >
                                 <div className="text-white/10 mb-6 flex justify-center scale-150">{s.icon}</div>
-                                <div className="text-5xl lg:text-8xl lg:text-6xl md:text-4xl font-black text-white mb-2 tracking-tighter">{s.value}</div>
+                                <div className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-black text-white mb-2 tracking-tighter">{s.value}</div>
                                 <div className="text-secondary font-black text-xs uppercase tracking-widest">{s.label}</div>
                             </motion.div>
                         ))}
@@ -132,7 +132,7 @@ const Home = () => {
                         </div>
 
                         <div className="relative z-20 max-w-3xl">
-                            <h2 className="text-4xl lg:text-7xl lg:text-5xl md:text-4xl font-black mb-10 leading-[0.9] tracking-tighter text-dark">
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-10 leading-[0.9] tracking-tighter text-dark">
                                 VALMIINA <br />
                                 <span className="text-secondary">LIIKKEESEEN?</span>
                             </h2>
