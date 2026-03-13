@@ -27,17 +27,17 @@ const Hero = () => {
                 <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px]" />
             </div>
 
-            <div className="container relative z-20 pt-36 pb-24">
+            <div className="container relative z-20 pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24">
                 <div className="max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-block py-2 px-5 bg-white border border-black/5 shadow-sm rounded-full text-secondary font-black text-xs tracking-[0.3em] uppercase mb-8">
+                        <span className="inline-block py-2 px-5 bg-white border border-black/5 shadow-sm rounded-full text-secondary font-black text-xs tracking-[0.3em] uppercase mb-6 md:mb-8">
                             LUOTETTAVAA LOGISTIIKKAA VUODESTA 2004
                         </span>
-                        <h1 className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black leading-[0.9] mb-8 tracking-tighter text-dark">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black leading-[0.9] mb-6 md:mb-8 tracking-tighter text-dark">
                             TÄSMÄLLISTÄ <br />
                             <span className="text-secondary">KULJETUSTA</span> <br />
                             JOKA PÄIVÄ.
