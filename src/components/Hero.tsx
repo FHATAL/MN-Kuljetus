@@ -27,7 +27,7 @@ const Hero = () => {
                 <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px]" />
             </div>
 
-            <div className="container relative z-20 pt-28 pb-24">
+            <div className="container relative z-20 pt-36 pb-24">
                 <div className="max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
