@@ -5,7 +5,7 @@ import heroMain from '../assets/images/hero_main.jpg'
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-[#f8fafc]">
+        <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#f8fafc] pt-28 md:pt-36 lg:pt-40 pb-16">
             {/* Ambient Background */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/40 to-white z-10" />
@@ -27,7 +27,7 @@ const Hero = () => {
                 <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px]" />
             </div>
 
-            <div className="container relative z-20 pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24">
+            <div className="container relative z-20 py-10 md:py-16 mt-auto mb-auto">
                 <div className="max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
