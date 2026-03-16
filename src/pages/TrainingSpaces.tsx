@@ -18,10 +18,10 @@ const TrainingSpaces = () => {
                 <div className="container relative z-10">
                     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
                         <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">SIEVARIN</span>
-                        <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-dark">
                             KOKOUS<span className="text-secondary">TILAT</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
+                        <p className="text-lg sm:text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
                             Täydelliset puitteet kokouksille, koulutuksille, yritystilaisuuksille ja juhlille avarassa ja valoisassa ympäristössä Harjavallassa.
                         </p>
                     </motion.div>

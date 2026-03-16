@@ -34,15 +34,15 @@ const Hero = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-block py-2 px-5 bg-white border border-black/5 shadow-sm rounded-full text-secondary font-black text-xs tracking-[0.3em] uppercase mb-6 md:mb-8">
+                        <span className="inline-block py-2 px-4 sm:px-5 bg-white border border-black/5 shadow-sm rounded-full text-secondary font-black text-[10px] sm:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase mb-6 md:mb-8 text-center max-w-full">
                             LUOTETTAVAA LOGISTIIKKAA VUODESTA 2004
                         </span>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black leading-[0.9] mb-6 md:mb-8 tracking-tighter text-dark">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1] md:leading-[0.9] mb-6 md:mb-8 tracking-tighter text-dark">
                             TÄSMÄLLISTÄ <br />
                             <span className="text-secondary">KULJETUSTA</span> <br />
                             JOKA PÄIVÄ.
                         </h1>
-                        <p className="text-base md:text-lg lg:text-2xl text-dark/70 max-w-2xl mb-10 font-medium leading-relaxed">
+                        <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-dark/70 max-w-2xl mb-8 md:mb-10 font-medium leading-relaxed">
                             Ammattitaitoista logistiikkaa ja lämpösäädeltyjä kuljetuksia koko Etelä-Suomen alueella. Perheyrityksen luotettavuus kohtaa modernin teknologian.
                         </p>
 
@@ -68,9 +68,11 @@ const Hero = () => {
                         </div>
 
                         {/* Bottom decor - inline below buttons now */}
-                        <div className="flex flex-wrap gap-6 mt-10 text-[10px] font-black tracking-[0.4em] uppercase text-dark/40">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-8 md:mt-10 text-[10px] font-black tracking-[0.2em] sm:tracking-[0.4em] uppercase text-dark/40">
                             <span>FRC / FNA SERTIFIOITU</span>
+                            <span className="hidden sm:inline">•</span>
                             <span>SATELLIITTISEURANTA</span>
+                            <span className="hidden sm:inline">•</span>
                             <span>24/7 PALVELU</span>
                         </div>
                     </motion.div>

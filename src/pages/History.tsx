@@ -65,10 +65,10 @@ const History = () => {
                     className="mb-16 md:mb-32 text-center"
                 >
                     <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">YRITYS</span>
-                    <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-dark">
                         MEIDÄN <span className="text-secondary">TARINAMME</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-dark/60 max-w-3xl mx-auto font-medium leading-relaxed">
+                    <p className="text-lg sm:text-xl md:text-2xl text-dark/60 max-w-3xl mx-auto font-medium leading-relaxed">
                         Yli kaksi vuosikymmentä luottamusta, ammattitaitoa ja vakaata kasvua logistiikan eturintamassa.
                     </p>
                 </motion.div>

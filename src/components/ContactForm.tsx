@@ -12,7 +12,7 @@ interface ContactFormProps {
 }
 
 const ContactForm = ({
-    formId = "FORM_ID_HERE",
+    formId,
     defaultSubject = "Tarjouspyyntö",
     showSubjectSelect = true,
     excludeSubjects = [],
@@ -62,7 +62,7 @@ const ContactForm = ({
                     </button>
                 </motion.div>
             ) : (
-                <form onSubmit={handleSubmit} className="space-y-10" action={`https://formspree.io/f/${formId}`} method="POST">
+                <form onSubmit={handleSubmit} className="space-y-10" {...(formId ? { action: `https://formspree.io/f/${formId}`, method: "POST" } : {})}>
                     {/* Add title/desc if provided, otherwise parent handles it */}
                     {(title || description) && (
                         <div className="text-center mb-10">

@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion'
-import { Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Phone, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import niinivirta60 from '../assets/images/niinivirta60.png'
 
 const Footer = () => {
     return (
-        <footer className="bg-white text-dark pt-24 pb-12 lg:pt-48 md:pt-32 md:pb-24 border-t border-black/5 shadow-[0_-20px_50px_rgba(0,0,0,0.02)]">
+        <footer className="bg-white text-dark pt-16 pb-8 md:pt-32 lg:pt-48 md:pb-24 border-t border-black/5 shadow-[0_-20px_50px_rgba(0,0,0,0.02)]">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-20 mb-20 md:mb-40">
                     <div className="lg:col-span-2">
@@ -16,16 +15,7 @@ const Footer = () => {
                             Toimimme ympäri vuorokauden Länsi- ja Etelä-Suomen alueella.
                         </p>
                         <div className="flex gap-6">
-                            {[Facebook, Instagram, Linkedin].map((Icon, i) => (
-                                <motion.a
-                                    key={i}
-                                    whileHover={{ y: -5, scale: 1.1, color: '#0088ff' }}
-                                    href="#"
-                                    className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-black/5 hover:border-secondary hover:shadow-xl transition-all"
-                                >
-                                    <Icon size={24} />
-                                </motion.a>
-                            ))}
+                            {/* Social media links removed until provided */}
                         </div>
                     </div>
 
@@ -55,9 +45,9 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-8 md:pt-16 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-8 text-dark/40 font-black text-[10px] tracking-[0.3em] uppercase">
-                    <p>
-                        © {new Date().getFullYear()} MN KULJETUS OY
-                        <span className="mx-4 opacity-20">|</span>
+                    <p className="flex flex-col md:flex-row items-center gap-2 md:gap-0">
+                        <span>© {new Date().getFullYear()} MN KULJETUS OY</span>
+                        <span className="hidden md:inline mx-4 opacity-20">|</span>
                         <a href="https://fhatal.com" target="_blank" rel="noopener noreferrer" className="hover:text-dark transition-colors">DESIGNED BY FHATAL</a>
                     </p>
                     <div className="flex gap-10">

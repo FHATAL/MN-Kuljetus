@@ -19,10 +19,10 @@ const WarehousingServices = () => {
                         animate={{ opacity: 1, y: 0 }}
                     >
                         <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">PALVELUT</span>
-                        <h1 className="text-4xl lg:text-8xl lg:text-6xl md:text-4xl font-black mb-8 tracking-tighter leading-none text-dark">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-dark">
                             VARASTOINTI<span className="text-secondary">PALVELUT</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
+                        <p className="text-lg sm:text-xl md:text-2xl text-dark/60 max-w-3xl font-medium leading-relaxed">
                             Nykyaikaista ja turvallista varastotilaa sekä logistiikan kokonaisratkaisuja Porin parhaalla paikalla.
                         </p>
                     </motion.div>
