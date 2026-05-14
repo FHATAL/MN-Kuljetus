@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh pr create --title 'fix: wire up Formspree contact forms' --body ' *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(gh pr create --repo FHATAL/MN-Kuljetus --head claude/distracted-hertz-23c47f --base main --title 'fix: wire up Formspree contact forms' --body ' *)",
+      "Bash(gh pr *)",
+      "Bash(git rm *)"
+    ]
+  }
+}
