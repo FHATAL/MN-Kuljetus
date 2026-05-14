@@ -23,7 +23,7 @@ const RequestQuote = () => {
                         className="glass-card p-6 md:p-16 rounded-[40px] md:rounded-[60px] border-black/5 relative overflow-hidden shadow-2xl shadow-black/5 bg-white"
                     >
                         <ContactForm
-                            formId="GENERAL_FORM_ID"
+                            formId="mnjwywdy"
                             excludeSubjects={['Koulutustilat']}
                         />
                     </motion.div>

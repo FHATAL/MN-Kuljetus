@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { Send, CheckCircle2 } from 'lucide-react'
-import { useState } from 'react'
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react'
+import { useState, useRef } from 'react'
 
 interface ContactFormProps {
     formId?: string; // For Formspree
@@ -20,12 +20,31 @@ const ContactForm = ({
     description
 }: ContactFormProps) => {
     const [submitted, setSubmitted] = useState(false)
+    const [error, setError] = useState(false)
+    const [sending, setSending] = useState(false)
+    const formRef = useRef<HTMLFormElement>(null)
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Here you would integrate Formspree with the formId
-        // form.action = `https://formspree.io/f/${formId}`
-        setSubmitted(true)
+        if (!formId || !formRef.current) return
+        setSending(true)
+        setError(false)
+        try {
+            const response = await fetch(`https://formspree.io/f/${formId}`, {
+                method: 'POST',
+                body: new FormData(formRef.current),
+                headers: { Accept: 'application/json' }
+            })
+            if (response.ok) {
+                setSubmitted(true)
+            } else {
+                setError(true)
+            }
+        } catch {
+            setError(true)
+        } finally {
+            setSending(false)
+        }
     }
 
     const allSubjects = [
@@ -62,7 +81,7 @@ const ContactForm = ({
                     </button>
                 </motion.div>
             ) : (
-                <form onSubmit={handleSubmit} className="space-y-10" {...(formId ? { action: `https://formspree.io/f/${formId}`, method: "POST" } : {})}>
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-10">
                     {/* Add title/desc if provided, otherwise parent handles it */}
                     {(title || description) && (
                         <div className="text-center mb-10">
@@ -117,15 +136,23 @@ const ContactForm = ({
                         <textarea required name="message" rows={6} className="w-full bg-slate-50 border border-black/5 rounded-3xl px-8 py-6 outline-none focus:border-secondary focus:bg-white focus:shadow-xl focus:shadow-black/5 transition-all font-bold text-dark resize-none placeholder:text-dark/10" placeholder="Kerro tarpeestasi lyhyesti..."></textarea>
                     </div>
 
+                    {error && (
+                        <div className="flex items-center gap-4 p-6 bg-red-50 border border-red-100 rounded-2xl text-red-600">
+                            <AlertCircle size={20} className="shrink-0" />
+                            <p className="font-bold text-sm">Viestin lähetys epäonnistui. Yritä uudelleen tai ota yhteyttä suoraan.</p>
+                        </div>
+                    )}
+
                     <div className="pt-6">
                         <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                            whileHover={{ scale: sending ? 1 : 1.02 }}
+                            whileTap={{ scale: sending ? 1 : 0.98 }}
                             type="submit"
-                            className="w-full bg-dark text-white rounded-3xl py-7 font-black text-2xl shadow-2xl shadow-black/20 hover:bg-black transition-all flex items-center justify-center gap-4 group"
+                            disabled={sending}
+                            className="w-full bg-dark text-white rounded-3xl py-7 font-black text-2xl shadow-2xl shadow-black/20 hover:bg-black transition-all flex items-center justify-center gap-4 group disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                             <Send size={28} className="group-hover:translate-x-2 transition-transform" />
-                            LÄHETÄ VIESTI
+                            {sending ? 'LÄHETETÄÄN...' : 'LÄHETÄ VIESTI'}
                         </motion.button>
                     </div>
 
