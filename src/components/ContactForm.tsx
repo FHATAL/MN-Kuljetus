@@ -136,6 +136,9 @@ const ContactForm = ({
                         <textarea required name="message" rows={6} className="w-full bg-slate-50 border border-black/5 rounded-3xl px-8 py-6 outline-none focus:border-secondary focus:bg-white focus:shadow-xl focus:shadow-black/5 transition-all font-bold text-dark resize-none placeholder:text-dark/10" placeholder="Kerro tarpeestasi lyhyesti..."></textarea>
                     </div>
 
+                    {/* Honeypot — hidden from humans, bots fill it, Formspree discards the submission */}
+                    <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
                     {error && (
                         <div className="flex items-center gap-4 p-6 bg-red-50 border border-red-100 rounded-2xl text-red-600">
                             <AlertCircle size={20} className="shrink-0" />
