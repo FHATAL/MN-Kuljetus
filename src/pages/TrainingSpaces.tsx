@@ -103,7 +103,7 @@ const TrainingSpaces = () => {
                 <div className="container max-w-4xl">
                     <div className="glass-card p-8 md:p-16 rounded-[40px] md:rounded-[60px] border-black/5 shadow-2xl shadow-black/5 bg-white">
                         <ContactForm
-                            formId="xjgldlwq"
+                            formId="xzdwjlkw"
                             defaultSubject="Kokoustilat"
                             showSubjectSelect={false}
                             title="VARAA TILAISUUS"

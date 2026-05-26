@@ -27,7 +27,7 @@ const Home = () => {
 
     const stats = [
         { label: "Vuotta Alalla", value: "20+", icon: <BarChart3 /> },
-        { label: "Ammattilaista", value: "100%", icon: <Users2 /> },
+        { label: "Asiakastyytyväisyys", value: "100%", icon: <Users2 /> },
         { label: "Palvelu", value: "24/7", icon: <Clock /> },
         { label: "Lastausta", value: "15k+", icon: <Globe2 /> }
     ]
@@ -153,17 +153,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Bottom area */}
-            <div className="py-20 border-t border-black/5">
-                <div className="container flex flex-wrap justify-between items-center gap-8 text-dark/20 uppercase font-black tracking-widest text-[10px]">
-                    <div className="text-2xl font-black tracking-tighter text-dark/10">MN KULJETUS OY</div>
-                    <div className="flex gap-12 font-black">
-                        {['LinkedIn', 'Facebook', 'Instagram'].map(s => (
-                            <a key={s} href="#" className="hover:text-dark transition-colors">{s}</a>
-                        ))}
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }
