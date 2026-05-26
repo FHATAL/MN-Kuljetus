@@ -47,7 +47,7 @@ const History = () => {
         {
             year: "2024–2025",
             title: "NYKYAIKAINEN LOGISTIIKKA",
-            desc: "Yritys investoi kalustoon ja teknologiaan. Liikevaihto vakiintuu yli 3 miljoonan euron tasolle ja yritys työllistää noin 15-20 logistiikan ammattilaista."
+            desc: "Yritys investoi kalustoon ja teknologiaan. Liikevaihto vakiintuu 2,5–3 miljoonan euron tasolle ja yritys työllistää noin 15-20 logistiikan ammattilaista."
         },
         {
             year: "2026",
