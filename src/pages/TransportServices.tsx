@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
-import { Truck, MapPin, BadgeCheck, ArrowRight, Zap } from 'lucide-react'
+import { Truck, MapPin, BadgeCheck, ArrowRight, Zap, Heart } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import transportMain from '../assets/images/transport_main.jpg'
+import weddingCar from '../assets/images/wedding_car.jpg'
 
 const TransportServices = () => {
     const serviceDetails = [
@@ -112,6 +113,46 @@ const TransportServices = () => {
                                 <p className="text-lg md:text-xl text-dark/60 font-medium leading-relaxed">{item.desc}</p>
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Wedding ride / Hääkyyti */}
+            <section className="py-12 md:py-24">
+                <div className="container">
+                    <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="relative order-2 lg:order-1"
+                        >
+                            <div className="relative aspect-[4/3] bg-slate-100 rounded-[50px] overflow-hidden border border-black/5 shadow-2xl shadow-black/5">
+                                <img src={weddingCar} alt="Klassikkoauto hääkyytiin" className="w-full h-full object-cover transition-transform duration-1000" />
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="order-1 lg:order-2"
+                        >
+                            <div className="w-20 h-20 bg-secondary/5 rounded-3xl flex items-center justify-center text-secondary mb-10 border border-secondary/10">
+                                <Heart size={40} />
+                            </div>
+                            <span className="text-secondary font-black tracking-[0.5em] text-xs uppercase mb-4 block">ERIKOISPALVELU</span>
+                            <h2 className="text-3xl lg:text-5xl md:text-4xl font-black mb-8 tracking-tight text-dark">KLASSIKKO <span className="text-secondary">HÄÄKYYTIIN</span></h2>
+                            <p className="text-lg md:text-xl text-dark/70 leading-relaxed mb-10 font-medium">
+                                Tarvitsetko tyylikkään kyydin hääpäivääsi tai muuhun juhlaan? Klassikkoautomme on käytettävissä noin 50 km säteellä. Ota yhteyttä, niin sovitaan yksityiskohdat.
+                            </p>
+                            <Link to="/ota-yhteytta" className="inline-flex items-center gap-4 bg-dark text-white font-black tracking-wide px-8 py-5 rounded-full hover:bg-secondary transition-all shadow-xl group">
+                                OTA YHTEYTTÄ
+                                <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                                    <ArrowRight size={18} />
+                                </span>
+                            </Link>
+                        </motion.div>
                     </div>
                 </div>
             </section>
