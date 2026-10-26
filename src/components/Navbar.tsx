@@ -9,16 +9,19 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const [prevLocation, setPrevLocation] = useState(location);
+
+  // Close the mobile menu on navigation (state adjusted during render, no effect needed)
+  if (location !== prevLocation) {
+    setPrevLocation(location);
+    setIsOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
 
   const navLinks = [
     { name: 'Etusivu', href: '/' },
